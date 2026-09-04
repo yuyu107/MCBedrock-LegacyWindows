@@ -1,0 +1,37 @@
+LIBRARY W81KERN
+EXPORTS
+    AcquireSRWLockExclusive=KERNEL32.AcquireSRWLockExclusive @1
+    DebugBreak=KERNEL32.DebugBreak @2
+    FormatMessageW=KERNEL32.FormatMessageW @3
+    GetCurrentProcess=KERNEL32.GetCurrentProcess @4
+    GetCurrentProcessId=KERNEL32.GetCurrentProcessId @5
+    GetCurrentThread=KERNEL32.GetCurrentThread @6
+    GetCurrentThreadId=KERNEL32.GetCurrentThreadId @7
+    GetLastError=KERNEL32.GetLastError @8
+    GetModuleFileNameA=KERNEL32.GetModuleFileNameA @9
+    GetModuleHandleExW=KERNEL32.GetModuleHandleExW @10
+    GetModuleHandleW=KERNEL32.GetModuleHandleW @11
+    GetProcAddress=KERNEL32.GetProcAddress @12
+    GetProcessHeap=KERNEL32.GetProcessHeap @13
+    GetSystemTimeAsFileTime=KERNEL32.GetSystemTimeAsFileTime @14
+    HeapAlloc=KERNEL32.HeapAlloc @15
+    HeapCreate=KERNEL32.HeapCreate @16
+    HeapDestroy=KERNEL32.HeapDestroy @17
+    HeapFree=KERNEL32.HeapFree @18
+    InitializeSListHead=KERNEL32.InitializeSListHead @19
+    IsDebuggerPresent=KERNEL32.IsDebuggerPresent @20
+    IsProcessorFeaturePresent=KERNEL32.IsProcessorFeaturePresent @21
+    OutputDebugStringW=KERNEL32.OutputDebugStringW @22
+    QueryPerformanceCounter=KERNEL32.QueryPerformanceCounter @23
+    ReleaseSRWLockExclusive=KERNEL32.ReleaseSRWLockExclusive @24
+    RtlCaptureContext=KERNEL32.RtlCaptureContext @25
+    RtlLookupFunctionEntry=KERNEL32.RtlLookupFunctionEntry @26
+    RtlVirtualUnwind=KERNEL32.RtlVirtualUnwind @27
+    SetLastError=KERNEL32.SetLastError @28
+    SetThreadDescription @29
+    SetUnhandledExceptionFilter=KERNEL32.SetUnhandledExceptionFilter @30
+    SleepConditionVariableSRW=KERNEL32.SleepConditionVariableSRW @31
+    TerminateProcess=KERNEL32.TerminateProcess @32
+    TryAcquireSRWLockExclusive=KERNEL32.TryAcquireSRWLockExclusive @33
+    UnhandledExceptionFilter=KERNEL32.UnhandledExceptionFilter @34
+    WakeAllConditionVariable=KERNEL32.WakeAllConditionVariable @35
