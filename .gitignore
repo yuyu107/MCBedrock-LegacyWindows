@@ -1,0 +1,18 @@
+# Runtime / generated files
+bridge_files/Win81MinecraftBridge.exe
+bridge_files/win81_launcher_bridge.log
+W81KERN.dll
+
+# Game files and backups
+Minecraft.Windows.exe
+WinPixEventRuntime.dll
+WinPixEventRuntime.dll.win81bak_*
+netease.data
+netease.data.win81*
+
+# Windows / editor noise
+Thumbs.db
+Desktop.ini
+*.user
+*.suo
+.vs/
