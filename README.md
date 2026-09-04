@@ -20,11 +20,12 @@
 
 ### Windows 7：FeverGames 下载修复
 
-当前实验性整合包：**FeverGames Win7 Bedrock Zero-Start Fix v1.2**
+当前正式发布版本：**FeverGames Legacy Windows Downloader v1.2**
 
+- [下载 v1.2 Release](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.2)
 - [FeverGames-LegacyWindows-Downloader：完整说明与源码](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader)
 
-该包用于 **FeverGames 1.18.42.12**，可从官方/重装后的平台状态开始一次完成前端系统版本修补和 Win7 兼容 `downloadIPC.exe` 替换。
+该版本用于 **FeverGames 1.18.42.12**，可从官方/重装后的平台状态开始一次完成前端系统版本修补和 Win7 兼容 `downloadIPC.exe` 替换。独立下载器仓库后续还实测确认《第五人格》等非 Minecraft 游戏也能进入正常下载流程，说明其下载核心并非基岩版专用；跨游戏兼容情况以独立仓库记录为准。
 
 > [!WARNING]
 > Windows 7、Windows 8.0 与 Windows 8.1 的系统内核、API Set 映射及可用系统 API 存在差异，因此不要把 Windows 8.1 Bridge 与 Windows 7 FeverGames 下载补丁混用。
@@ -33,7 +34,7 @@
 
 | 系统 | 状态 | 当前方案 |
 |---|---|---|
-| Windows 7 SP1 x64 | ✅ 客户端可运行；✅ FeverGames 下载链已完成端到端实机验证 | 游戏使用 VxKex，并确保 `XINPUT1_3.dll` 存在；FeverGames 1.18.42.12 可使用 Zero-Start v1.2 |
+| Windows 7 SP1 x64 | ✅ 客户端可运行；✅ FeverGames 下载链已完成端到端实机验证 | 游戏使用 VxKex，并确保 `XINPUT1_3.dll` 存在；FeverGames 1.18.42.12 可使用独立下载器 v1.2 Release |
 | Windows 8.1 x64 | ✅ 已验证可运行 | 使用本项目提供的 Launcher Login Bridge |
 | Windows 8.0 | ⚠️ 尚未完整验证 | 可能需要与 Win8.1 不同的适配，请以实机结果为准 |
 
@@ -98,7 +99,7 @@ FeverGames
 
 测试过程中 FeverGames 后续下发了不同于早期研究版本的新 `targetVersion`，替代下载器仍能动态获取对应 Manifest 并完成下载，因此 **Minecraft 游戏内容版本不是写死的**。
 
-### Zero-Start v1.2
+### FeverGames Legacy Windows Downloader v1.2
 
 独立仓库 [FeverGames-LegacyWindows-Downloader](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader) 提供从 0 开始的一键整合修补脚本。
 
@@ -238,6 +239,6 @@ MIT License **仅适用于本仓库中由本项目自行编写的内容**。Mine
 ## 当前版本
 
 - Windows 8.1 正式兼容包：**v2.0.1 Release**
-- Windows 7 FeverGames 下载修补：**Zero-Start v1.2（当前针对 FeverGames 1.18.42.12）**
+- Windows 7 FeverGames 下载修补：**v1.2 Release（当前前端补丁针对 FeverGames 1.18.42.12）**
 
 详见 [CHANGELOG.md](CHANGELOG.md)。
