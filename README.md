@@ -27,7 +27,7 @@
 
 | 系统 | 状态 | 当前方案 |
 |---|---|---|
-| Windows 7 x64 | ✅ 已验证可运行 | 使用 VxKex，并确保系统中存在 `XINPUT1_3.dll` |
+| Windows 7 x64 | ✅ 客户端已验证可运行；⚠️ 当前 FeverGames 下载器存在兼容问题 | 使用 VxKex，并确保系统中存在 `XINPUT1_3.dll`；游戏文件需预先可用 |
 | Windows 8.1 x64 | ✅ 已验证可运行 | 使用本项目提供的兼容 Bridge |
 | Windows 8.0 | ⚠️ 尚未完整验证 | 理论上可能需要与 Win8.1 不同的适配，请以实机结果为准 |
 
@@ -54,6 +54,25 @@ Windows 7 当前不需要安装本项目的 Win8.1 Bridge。
 4. 确保系统中存在 `XINPUT1_3.dll`。
 
 如果缺少 `XINPUT1_3.dll`，建议通过微软旧版 DirectX 运行库补齐，而不是从不明 DLL 下载站单独下载文件。
+
+### Windows 7 上的 FeverGames 下载限制
+
+> [!WARNING]
+> **“游戏客户端可以在 Windows 7 上运行”不等于“当前 FeverGames 可以在 Windows 7 上正常下载/安装基岩互通版”。**
+
+目前已经确认，FeverGames 当前用于部分游戏的新下载后端会启动 `downloadIPC.exe`。在 Windows 7 SP1 x64 上，当前版本的 `downloadIPC.exe` 会在非常早的 Go runtime 初始化阶段崩溃，典型表现为：
+
+```text
+Exception 0xc0000005
+PC=0x0
+runtime.asmstdcall(...)
+```
+
+因此在 Windows 7 上即使绕过了 FeverGames 前端的系统版本限制，下载任务仍可能长期停在“正在初始化”，随后失败。当前测试中，下载目录和签名密钥可以正常创建，但下载器本体会在建立实际下载任务之前退出。
+
+这属于 **FeverGames 下载器自身的旧系统兼容问题**，与本项目解决的 `Minecraft.Windows.exe` 客户端运行兼容并不是同一层问题。现阶段本项目**不把“修复 FeverGames 在 Windows 7 上的游戏下载器”作为已完成能力**。
+
+如果已经有可用的基岩互通版游戏文件，Windows 7 仍可以继续使用上面的 VxKex 方案启动。后续如找到兼容 Windows 7 的旧版下载后端，或能够稳定替代当前 `downloadIPC.exe`，会再单独补充说明。
 
 ## Windows 8.1
 
