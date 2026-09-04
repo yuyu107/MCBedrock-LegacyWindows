@@ -152,6 +152,12 @@ Windows 8.1 正式方案保留 FeverGamesLauncher，因此当前可以继续使�
 
 请不要公开包含账号、手机号、邮箱、Token、Cookie 等隐私信息的日志或截图。
 
+## 许可证
+
+本项目自行编写的源代码、脚本及文档采用 [MIT License](LICENSE) 开源。
+
+MIT License **仅适用于本仓库中由本项目自行编写的内容**。Minecraft、Windows、FeverGamesLauncher 以及其他第三方软件、商标、组件和相关资源的权利归各自权利人所有，不因本仓库采用 MIT License 而改变其授权状态。
+
 ## 当前版本
 
 Windows 8.1 正式兼容包：**v2.0.1 Release**
