@@ -4,6 +4,19 @@
 
 该客户端过去曾能够在 Windows 7 / 8.x 上正常运行，但从 **2026 年 2 月开始的新版本**起，旧版 Windows 不再能够直接正常启动。本项目因此针对不同系统提供兼容方案，让仍在使用旧版 Windows 的玩家可以继续运行新版客户端。
 
+## 下载最新正式版
+
+当前最新版本：**v2.0.1 - Windows 8.1 首个正式兼容版本**
+
+[前往 GitHub Releases 下载 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1)
+
+> [!WARNING]
+> **v2.0.1 兼容包仅适用于 Windows 8.1 x64。**
+>
+> Windows 7、Windows 8.0 与 Windows 8.1 的系统内核、API Set 映射及可用系统 API 存在差异，因此不能将 Windows 8.1 的兼容 Bridge 直接用于其他系统。
+>
+> Windows 7 请使用下文所述的 VxKex 方案；Windows 8.0 当前尚未完整适配。
+
 > [!IMPORTANT]
 > 本项目为社区兼容项目，与 Microsoft、Mojang、网易/FeverGames 无官方关联。
 > 游戏与启动器更新后可能引入新的兼容问题，因此无法保证所有未来版本都无需调整。
@@ -143,4 +156,4 @@ Windows 8.1 正式方案保留 FeverGamesLauncher，因此当前可以继续使�
 
 Windows 8.1 正式兼容包：**v2.0.1 Release**
 
-详见 [CHANGELOG.md](CHANGELOG.md)。
+[下载 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1) · 详见 [CHANGELOG.md](CHANGELOG.md)。
