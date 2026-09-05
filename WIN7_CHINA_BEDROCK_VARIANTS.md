@@ -7,13 +7,25 @@
 > [!IMPORTANT]
 > 以下结论来自实际机器测试，并不表示所有未来版本都一定保持相同兼容性。游戏、启动器或 VxKex 更新后，都可能改变结果。
 
+## 所有方案的共同前置条件
+
+无论使用以下哪一种中国版基岩客户端，Windows 7 下都需要确保系统中存在并能够正常使用：
+
+```text
+XINPUT1_3.dll
+```
+
+也就是说，`XINPUT1_3.dll` **不是仅“基岩互通版”需要的组件，而是目前三种已验证 Win7 方案的共同依赖**。
+
+如果系统缺少 `XINPUT1_3.dll`，建议安装微软旧版 DirectX 运行库补齐，而不是从来源不明的 DLL 下载站单独下载文件。
+
 ## 当前实测概览
 
 | 客户端 | Windows 7 状态 | 当前已验证方案 |
 |---|---|---|
-| Java 经典版启动器中的基岩版 | ✅ 可运行 | 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
-| 基岩互通版 | ✅ 可运行 | 较新的 VxKex / VxKex NEXT 已可支持；按本仓库 Windows 7 方案配置 |
-| 开发者版本 | ✅ 可运行并进入世界 | 启用 VxKex，并将游戏目录自带的 `dbghelp.dll` 改名/禁用 |
+| Java 经典版启动器中的基岩版 | ✅ 可运行 | `XINPUT1_3.dll` + 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
+| 基岩互通版 | ✅ 可运行 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；按本仓库 Windows 7 方案配置 |
+| 开发者版本 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + VxKex，并将游戏目录自带的 `dbghelp.dll` 改名/禁用 |
 
 ## 1. Java 经典版启动器中的基岩版
 
@@ -21,9 +33,10 @@
 
 已验证的基本方式为：
 
-1. 找到实际运行的 `Minecraft.Windows.exe`；
-2. 为该程序启用 **VxKex / VxKex NEXT**；
-3. 通过原启动器正常启动游戏。
+1. 使用 Windows 7 SP1 x64，并确保 `XINPUT1_3.dll` 可用；
+2. 找到实际运行的 `Minecraft.Windows.exe`；
+3. 为该程序启用 **VxKex / VxKex NEXT**；
+4. 通过原启动器正常启动游戏。
 
 在早期测试中，这一版本比“基岩互通版”更早能够依靠 VxKex 在 Windows 7 上运行。
 
@@ -36,8 +49,8 @@
 Windows 7 下目前仍建议：
 
 1. 使用 Windows 7 SP1 x64；
-2. 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT；
-3. 确保系统具备游戏所需的旧版 DirectX 组件，例如 `XINPUT1_3.dll`；
+2. 确保系统具备游戏所需的旧版 DirectX 组件，尤其是 `XINPUT1_3.dll`；
+3. 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT；
 4. 不要从不明 DLL 下载站随意补系统组件。
 
 FeverGames 平台本身的 Windows 7 下载兼容问题由独立仓库 **FeverGames-LegacyWindows-Downloader** 维护。
@@ -46,7 +59,9 @@ FeverGames 平台本身的 Windows 7 下载兼容问题由独立仓库 **FeverGa
 
 开发者版本的包体中包含比普通客户端更多的文件和调试相关组件。
 
-在 Windows 7 上仅启用 VxKex 后，曾出现以下错误：
+在 Windows 7 上需要先确保 `XINPUT1_3.dll` 可用，再为 `Minecraft.Windows.exe` 启用 VxKex。
+
+仅完成这些基础条件后，曾出现以下错误：
 
 ```text
 Minecraft.Windows.exe - 无法找到入口
@@ -74,7 +89,7 @@ dbghelp.dll
 dbghelp.dll.bak
 ```
 
-然后继续保持 `Minecraft.Windows.exe` 启用了 VxKex，再启动游戏。
+然后继续保持 `Minecraft.Windows.exe` 启用了 VxKex，并确保 `XINPUT1_3.dll` 可用，再启动游戏。
 
 ### 实机结果
 
@@ -84,9 +99,11 @@ dbghelp.dll.bak
 - ✅ 游戏正常完成启动；
 - ✅ 可以正常进入世界。
 
-因此当前测试构建中，开发者版本在 Windows 7 上需要的额外处理可概括为：
+因此当前测试构建中，开发者版本在 Windows 7 上需要的处理可概括为：
 
 ```text
+XINPUT1_3.dll
++
 VxKex / VxKex NEXT
 +
 禁用游戏目录自带 dbghelp.dll
@@ -111,6 +128,8 @@ VxKex / VxKex NEXT
 
 本次开发者版本的 `dbghelp.dll` 就是一个实际例子：基岩版本体已经能够在 VxKex 环境下继续执行，但随包的新版调试组件会先在 Windows 7 上触发入口错误。
 
+另一方面，`XINPUT1_3.dll` 则是目前三种 Win7 方案共同需要满足的基础依赖，不应只在某一种客户端的说明中出现。
+
 ## 反馈兼容结果
 
 如果后续版本再次出现启动问题，建议记录：
@@ -119,6 +138,7 @@ VxKex / VxKex NEXT
 - 使用的是哪一种中国版客户端；
 - Minecraft 版本/构建；
 - VxKex / VxKex NEXT 版本；
+- `XINPUT1_3.dll` 是否存在且可正常加载；
 - 第一个出现的 Windows 错误；
 - 是否存在游戏目录自带的 `dbghelp.dll` / `dbgcore.dll`；
 - 是否能够创建窗口、进入主菜单和进入世界。
