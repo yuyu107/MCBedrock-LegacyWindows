@@ -2,6 +2,8 @@
 
 本项目用于恢复新版《我的世界》**基岩互通版**在 Windows 7 / Windows 8.x 上的运行能力。Windows 7 下 FeverGames 的下载兼容方案已拆分到独立仓库维护。
 
+此外，项目现已单独记录中国版三种不同基岩客户端在 Windows 7 下的实测兼容情况，包括：**Java 经典版启动器中的基岩版、基岩互通版、开发者版本**。详见 [中国版三种基岩客户端的 Windows 7 兼容情况](WIN7_CHINA_BEDROCK_VARIANTS.md)。
+
 该客户端过去曾能够在 Windows 7 / 8.x 上正常运行，但从 **2026 年 2 月开始的新版本**起，旧版 Windows 不再能够直接正常启动。后续 FeverGames 的新下载后端也对 Windows 7 引入了新的兼容问题，因此现在将“客户端运行兼容”和“FeverGames 下载兼容”分开维护。
 
 > [!IMPORTANT]
@@ -37,6 +39,8 @@
 | Windows 7 SP1 x64 | ✅ 客户端可运行；✅ FeverGames 下载链已完成端到端实机验证 | 游戏使用 VxKex，并确保 `XINPUT1_3.dll` 存在；FeverGames 1.18.42.12 可使用独立下载器 v1.2 Release |
 | Windows 8.1 x64 | ✅ 已验证可运行 | 使用本项目提供的 Launcher Login Bridge |
 | Windows 8.0 | ⚠️ 尚未完整验证 | 可能需要与 Win8.1 不同的适配，请以实机结果为准 |
+
+> 中国版不同分发客户端的 Windows 7 兼容情况并不完全相同。开发者版本目前还需要额外禁用游戏目录自带的 `dbghelp.dll`。详见 [WIN7_CHINA_BEDROCK_VARIANTS.md](WIN7_CHINA_BEDROCK_VARIANTS.md)。
 
 ## Windows 7
 
