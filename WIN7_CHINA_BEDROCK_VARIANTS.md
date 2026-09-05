@@ -23,9 +23,11 @@ XINPUT1_3.dll
 
 | 客户端 | Windows 7 状态 | 当前已验证方案 |
 |---|---|---|
-| Java 经典版启动器中的基岩版 | ✅ 可运行 | `XINPUT1_3.dll` + 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
-| 基岩互通版 | ✅ 可运行 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；按本仓库 Windows 7 方案配置 |
+| Java 经典版启动器中的基岩版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
+| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；按本仓库 Windows 7 方案配置 |
 | 开发者版本 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + VxKex，并将游戏目录自带的 `dbghelp.dll` 改名/禁用 |
+
+三种客户端目前都已经实机验证到**能够正常启动并进入世界**，并非只验证到出现窗口或进入主菜单。
 
 ## 1. Java 经典版启动器中的基岩版
 
@@ -37,6 +39,8 @@ XINPUT1_3.dll
 2. 找到实际运行的 `Minecraft.Windows.exe`；
 3. 为该程序启用 **VxKex / VxKex NEXT**；
 4. 通过原启动器正常启动游戏。
+
+实机已经验证该方案可以正常完成启动并进入世界。
 
 在早期测试中，这一版本比“基岩互通版”更早能够依靠 VxKex 在 Windows 7 上运行。
 
@@ -52,6 +56,8 @@ Windows 7 下目前仍建议：
 2. 确保系统具备游戏所需的旧版 DirectX 组件，尤其是 `XINPUT1_3.dll`；
 3. 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT；
 4. 不要从不明 DLL 下载站随意补系统组件。
+
+实机已经验证该方案可以正常完成启动并进入世界。
 
 FeverGames 平台本身的 Windows 7 下载兼容问题由独立仓库 **FeverGames-LegacyWindows-Downloader** 维护。
 
@@ -129,6 +135,8 @@ VxKex / VxKex NEXT
 本次开发者版本的 `dbghelp.dll` 就是一个实际例子：基岩版本体已经能够在 VxKex 环境下继续执行，但随包的新版调试组件会先在 Windows 7 上触发入口错误。
 
 另一方面，`XINPUT1_3.dll` 则是目前三种 Win7 方案共同需要满足的基础依赖，不应只在某一种客户端的说明中出现。
+
+目前三种客户端均已经实机验证能够进入世界，因此这里记录的是实际可游玩到世界内的结果，而不是只记录启动器或主菜单阶段。
 
 ## 反馈兼容结果
 
