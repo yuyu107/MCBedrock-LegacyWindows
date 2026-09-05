@@ -36,8 +36,8 @@ XINPUT1_3.dll
 已验证的基本方式为：
 
 1. 使用 Windows 7 SP1 x64，并确保 `XINPUT1_3.dll` 可用；
-2. 找到实际运行的 `Minecraft.Windows.exe`；
-3. 为该程序启用 **VxKex / VxKex NEXT**；
+2. 找到实际运行（位于 `X:\MCLDownload\MinecraftBENeteasePath\x64_mc`）的 `Minecraft.Windows.exe`；
+3. 为该程序启用 **VxKex / VxKex NEXT**（不要勾选“报告其他版本”）；
 4. 通过原启动器正常启动游戏。
 
 实机已经验证该方案可以正常完成启动并进入世界。
