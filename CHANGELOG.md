@@ -1,13 +1,22 @@
 # 更新日志
 
+## 2026-09-06 — Universal Bridge Core 0.4.3 模式命名整理
+
+- 将基岩互通版的正式内部模式名从 `interop` 调整为更明确的 `bedrock-interop`；
+- 新安装统一写入 `Mode = bedrock-interop`；
+- 旧共存测试留下的 `Mode = interop` 仍可被 Core 0.4.3 识别，并按 `bedrock-interop` 处理；
+- `check_bridge.ps1` 会把旧值明确标为兼容别名；
+- 基岩互通版后续 Tag 前缀从尚未启用的 `interop-win81-*` 调整为 `bedrock-interop-win81-*`；
+- 历史正式 Tag `v2.0.1` 保持不变。
+
 ## 2026-09-06 — Universal Bridge Core 0.4.2 同机共存验证
 
 - 新增共享 `shared/win81-universal-bridge/` 底层；
 - 解决 Java Classic 与基岩互通版都使用 `Minecraft.Windows.exe`、无法同时拥有两个机器级 IFEO Debugger 的冲突；
 - Universal Bridge 按 `Minecraft.Windows.exe` 完整路径注册和分流；
 - `java-classic` 模式继续使用已验证的私有 Windows 8.1 ApiSet v4 映射；
-- `interop` 模式同时使用 ApiSet v4 与 WinPix/W81KERN 兼容处理；
-- 已在同一台 Windows 8.1 x64 机器上实机验证 Java Classic 与 Interop 同时注册后，两边均可正常启动并进入世界；
+- 基岩互通版模式同时使用 ApiSet v4 与 WinPix/W81KERN 兼容处理；
+- 已在同一台 Windows 8.1 x64 机器上实机验证 Java Classic 与基岩互通版同时注册后，两边均可正常启动并进入世界；
 - 卸载单个客户端时只注销该完整路径；最后一个目标注销后才移除共享 IFEO；
 - Java Classic 的局域网联机限制保持不变。
 
