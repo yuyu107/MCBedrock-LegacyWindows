@@ -5,7 +5,8 @@
 ## 推荐格式
 
 ```text
-interop-win81-vX.Y.Z
+bedrock-interop-win81-vX.Y.Z
+bedrock-interop-win81-vX.Y.Z-rcN
 java-classic-win81-vX.Y.Z
 java-classic-win81-vX.Y.Z-rcN
 developer-win81-vX.Y.Z
@@ -13,7 +14,7 @@ developer-win81-vX.Y.Z
 
 当前约定：
 
-- `interop-*`：基岩互通版；
+- `bedrock-interop-*`：基岩互通版；
 - `java-classic-*`：Java 经典版启动器中的基岩版；
 - `developer-*`：开发者版本；
 - `win81`：Windows 8.1 x64；
@@ -21,12 +22,15 @@ developer-win81-vX.Y.Z
 
 ## 历史 Tag
 
-已经发布的 `v2.0.1` 保持原样，不重命名、不删除，以避免历史 Release 链接失效。之后的新 Release 使用带客户端前缀的 Tag。
+已经发布的 `v2.0.1` 保持原样，不重命名、不删除，以避免历史 Release 链接失效。
+
+此前文档曾计划使用 `interop-win81-*`，但该前缀尚未用于正式新 Release。为避免 `interop` 含义过于抽象，后续统一使用 `bedrock-interop-win81-*`。
 
 例如：
 
 ```text
-interop-win81-v2.0.2
-java-classic-win81-v1.0.0-rc1
+bedrock-interop-win81-v2.1.0-rc1
+bedrock-interop-win81-v2.1.0
+java-classic-win81-v1.0.0-rc2
 java-classic-win81-v1.0.0
 ```
