@@ -1,5 +1,16 @@
 # 更新日志
 
+## 2026-09-06 — Universal Bridge Core 0.4.2 同机共存验证
+
+- 新增共享 `shared/win81-universal-bridge/` 底层；
+- 解决 Java Classic 与基岩互通版都使用 `Minecraft.Windows.exe`、无法同时拥有两个机器级 IFEO Debugger 的冲突；
+- Universal Bridge 按 `Minecraft.Windows.exe` 完整路径注册和分流；
+- `java-classic` 模式继续使用已验证的私有 Windows 8.1 ApiSet v4 映射；
+- `interop` 模式同时使用 ApiSet v4 与 WinPix/W81KERN 兼容处理；
+- 已在同一台 Windows 8.1 x64 机器上实机验证 Java Classic 与 Interop 同时注册后，两边均可正常启动并进入世界；
+- 卸载单个客户端时只注销该完整路径；最后一个目标注销后才移除共享 IFEO；
+- Java Classic 的局域网联机限制保持不变。
+
 ## 2026-09-06 — 仓库结构调整与 Java 经典版 Win8.1 RC1
 
 - 仓库改为统一使用 `main` 分支维护不同客户端方案；
@@ -16,7 +27,7 @@
 ### 修复
 
 - 修复从 v1.9.x / v2.0 升级时，旧 IFEO Debugger 指向游戏根目录 `Win81MinecraftBridge.exe`，导致新版安装器拒绝继续的问题；
-- 安装器可以识别本项目已知旧路径，并自动迁移到 `bridge_files\\Win81MinecraftBridge.exe`；
+- 安装器可以识别本项目已知旧路径，并自动迁移到 `bridge_files\Win81MinecraftBridge.exe`；
 - 不会覆盖来自其他工具的未知 IFEO Debugger；
 - `check_bridge.cmd` 可以识别旧路径并提示迁移状态；
 - `uninstall_bridge.cmd` 可以安全清理本项目当前和已知旧版 IFEO 配置。

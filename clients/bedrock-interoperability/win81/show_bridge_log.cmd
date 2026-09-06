@@ -1,13 +1,13 @@
 @echo off
-cd /d "%~dp0"
+set "LOG=%ProgramData%\MCBedrock-LegacyWindows\Win81UniversalBridge\win81_universal_bridge.log"
 echo ====================================================
-echo  MCBedrock Win8.1 Bridge Log
+echo  MCBedrock Win8.1 Universal Bridge Log
 echo ====================================================
 echo.
-if not exist "bridge_files\win81_launcher_bridge.log" (
-  echo [INFO] No bridge log exists yet.
+if not exist "%LOG%" (
+  echo [INFO] No Universal Bridge log exists yet.
 ) else (
-  type "bridge_files\win81_launcher_bridge.log"
+  type "%LOG%"
 )
 echo.
 pause
