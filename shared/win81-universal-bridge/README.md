@@ -2,7 +2,7 @@
 
 此目录用于解决多种中国版基岩客户端同时存在时，`Minecraft.Windows.exe` 的机器级 IFEO Debugger 只能指向一个 Bridge 的冲突。
 
-当前阶段：**coexistence test v0.1**。在共存机制完成实机验证前，不替换 `clients/` 下两套已经验证成功的正式/RC 安装器。
+当前阶段：**coexistence test v0.4**。在共存机制完成实机验证前，不替换 `clients/` 下两套已经验证成功的正式/RC 安装器。
 
 ## 设计
 
@@ -35,11 +35,28 @@ HKLM\SOFTWARE\MCBedrock-LegacyWindows\Win81UniversalBridge\Targets\<path-sha256>
 
 ### `interop`
 
-使用相同 ApiSet v4 映射。coexistence test v0.1 暂时复用基岩互通版 v2.0.1 已经完成的 WinPix/W81KERN 状态，不在共享 Bridge 内重新修补 WinPix。
+使用相同的私有 ApiSet v4 映射，并保持基岩互通版已验证方案中的 WinPix / W81KERN 兼容处理方向。
 
 ### 未注册路径
 
-如果 IFEO 捕获到一个没有注册的 `Minecraft.Windows.exe` 完整路径，Universal Bridge 只做透明转发，不应用 ApiSet 或 WinPix 兼容修改，避免误伤其他同名客户端。
+如果 IFEO 捕获到一个没有注册的 `Minecraft.Windows.exe` 完整路径，Universal Bridge 只做透明转发，不应用 ApiSet / WinPix 兼容修改，避免误伤其他同名客户端。
+
+## v0.4：先验证共享 EXE 真的完成升级
+
+实机日志曾出现一个重要现象：测试包已经迭代到 v0.3，但 `C:\ProgramData\MCBedrock-LegacyWindows\Win81UniversalBridge\win81_universal_bridge.log` 的实际运行头部仍然显示 `coexistence test v0.1`，并且失败的 Interop 启动没有留下任何 `interop` 路由记录。
+
+因此 v0.4 不继续盲目修改 Interop 本身，而首先强化共享 Bridge 的升级与自检：
+
+1. 编译到临时 `Win81UniversalBridge.v0.4.new.exe`；
+2. 用 `--version` 验证临时 EXE 必须明确返回 v0.4；
+3. 如果旧 Universal Bridge 仍在运行，则拒绝强制覆盖并提示先关闭 Minecraft / 重启；
+4. 保存上一份共享 EXE 为 `Win81UniversalBridge.previous.exe`；
+5. 安装后再次执行 `--version`；
+6. 验证 IFEO Debugger 确实指向共享 EXE；
+7. 保留其它已注册目标；
+8. 归档旧日志，避免旧 v0.1 日志与新测试结果混在一起。
+
+只有确认 `check_registered_targets.cmd` 显示共享 EXE 自检版本为 v0.4 后，后续 Interop 失败日志才可以视为 v0.4 的真实结果。
 
 ## 测试包
 
