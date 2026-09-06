@@ -1,6 +1,6 @@
 # Java 经典版启动器中的基岩版 — Windows 8.1
 
-历史 RC：**v1.0.0-RC1**。当前主分支已经迁移到已实机验证的 **Universal Bridge Core 0.4.2** 共存架构。
+历史 RC：**v1.0.0-RC1**。当前主分支使用 **Universal Bridge Core 0.4.3** 共存架构；其兼容核心基于已完成同机实测的 0.4.2。
 
 本方案用于让 Java 经典版启动器中的基岩版继续在 **Windows 8.1 x64** 上运行。
 
@@ -26,7 +26,7 @@
 Mode = java-classic
 ```
 
-机器上只保留一个共享 Universal IFEO Bridge。Java Classic 启动时只应用已验证的私有 Windows 8.1 ApiSet v4 映射，不进行 Interop 专用的 WinPix 处理。启动器参数仍原样转交，日志不记录其具体内容。
+机器上只保留一个共享 Universal IFEO Bridge。Java Classic 启动时只应用已验证的私有 Windows 8.1 ApiSet v4 映射，不进行 `bedrock-interop` 专用的 WinPix 处理。启动器参数仍原样转交，日志不记录其具体内容。
 
 直接双击 `Minecraft.Windows.exe` 只适合作为诊断；日常仍应从 Java 经典版启动器启动。
 
@@ -48,4 +48,4 @@ Mode = java-classic
 - `uninstall_bridge.cmd`：只注销当前 Java Classic 路径；
 - `bridge_files/Win81JavaClassicBridge.cs`：保留 RC1 旧独立 Bridge 源码，供历史参考。
 
-> Release 包会额外包含 `shared/` 目录，其中是 Universal Bridge Core 0.4.2 的共享安装脚本、源码和预编译 `W81KERN.dll`。
+> Release 包会额外包含 `shared/` 目录，其中是 Universal Bridge Core 0.4.3 的共享安装脚本、源码和预编译 `W81KERN.dll`。
