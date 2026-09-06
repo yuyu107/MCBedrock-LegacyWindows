@@ -29,7 +29,7 @@ shared/
 
 | 客户端 | 系统 | 状态 | 说明 |
 |---|---|---|---|
-| 基岩互通版 | Windows 8.1 x64 | ✅ | Universal Bridge `interop` 模式；可正常登录、进入游戏和世界 |
+| 基岩互通版 | Windows 8.1 x64 | ✅ | Universal Bridge `bedrock-interop` 模式；可正常登录、进入游戏和世界 |
 | Java 经典版启动器中的基岩版 | Windows 8.1 x64 | ✅ | Universal Bridge `java-classic` 模式；可启动并进入世界；单人和非局域网联机正常；局域网联机目前不可用 |
 | Java 经典版启动器中的基岩版 | Windows 7 SP1 x64 | ✅ | VxKex / VxKex NEXT + `XINPUT1_3.dll` |
 | 基岩互通版 | Windows 7 SP1 x64 | ✅ | VxKex / VxKex NEXT + `XINPUT1_3.dll` |
@@ -37,7 +37,7 @@ shared/
 
 ## Windows 8.1 多客户端共存
 
-**Universal Bridge Core 0.4.2 已完成同机实测。** Java Classic 与 Interop 可以同时注册：
+**Universal Bridge Core 0.4.2 已完成同机实测；Core 0.4.3 仅调整模式命名并保留旧模式兼容别名。**
 
 ```text
 Minecraft.Windows.exe
@@ -46,22 +46,24 @@ Minecraft.Windows.exe
         ↓
 完整路径分流
         ├─ java-classic
-        └─ interop
+        └─ bedrock-interop
 ```
 
-因此不再需要为了切换 Java Classic / Interop 反复卸载 IFEO。卸载其中一个方案只注销它自己的完整路径；只要仍有其它客户端注册，共享 IFEO 就会保留。
+旧测试版曾使用 `Mode = interop`。Core 0.4.3 仍会把它作为兼容别名识别；新安装统一写入 `Mode = bedrock-interop`。
+
+因此不再需要为了切换 Java Classic / 基岩互通版反复卸载 IFEO。卸载其中一个方案只注销它自己的完整路径；只要仍有其它客户端注册，共享 IFEO 就会保留。
 
 ## Release / Tag 区分
 
 源码统一维护在 `main`，Release 用 Tag 前缀区分适用客户端。完整规则见 [docs/RELEASE_TAGS.md](docs/RELEASE_TAGS.md)。
 
 ```text
-interop-win81-vX.Y.Z
+bedrock-interop-win81-vX.Y.Z[-rcN]
 java-classic-win81-vX.Y.Z[-rcN]
 developer-win81-vX.Y.Z
 ```
 
-已经存在的历史 Tag `v2.0.1` 保持原样；后续 Release 使用带客户端前缀的 Tag。多个客户端 Release 可以携带同一个已验证的 Universal Bridge Core。
+已经存在的历史 Tag `v2.0.1` 保持原样；后续 Release 使用带客户端前缀的 Tag。多个客户端 Release 可以携带同一个 Universal Bridge Core。
 
 ## Windows 7 发烧游戏下载兼容
 
