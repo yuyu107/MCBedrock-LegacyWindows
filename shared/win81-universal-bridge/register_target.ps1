@@ -1,11 +1,16 @@
 param(
-    [Parameter(Mandatory=$true)][ValidateSet('java-classic','interop')][string]$Mode,
+    [Parameter(Mandatory=$true)][ValidateSet('java-classic','bedrock-interop','interop')][string]$Mode,
     [Parameter(Mandatory=$true)][string]$GameRoot,
     [Parameter(Mandatory=$true)][string]$PayloadRoot
 )
 $ErrorActionPreference='Stop'
-$ExpectedBridgeVersion='MCBedrock Win8.1 Universal Bridge coexistence test v0.4.2'
-$CoreVersion='0.4.2'
+$ExpectedBridgeVersion='MCBedrock Win8.1 Universal Bridge coexistence test v0.4.3'
+$CoreVersion='0.4.3'
+
+if($Mode -eq 'interop'){
+    Write-Host "[MIGRATE] Legacy mode 'interop' is being normalized to 'bedrock-interop'."
+    $Mode='bedrock-interop'
+}
 
 trap {
     Write-Host ''
