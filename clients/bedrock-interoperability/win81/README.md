@@ -2,7 +2,7 @@
 
 本目录保存中国版《我的世界》**基岩互通版**在 Windows 8.1 x64 上的兼容方案。
 
-历史正式版本：**v2.0.1 Launcher Login Bridge**。当前主分支使用 **Universal Bridge Core 0.4.3** 共存架构；其兼容核心基于已完成同机实测的 0.4.2，0.4.3 主要统一模式命名。
+历史正式版本：**v2.0.1 Launcher Login Bridge**。当前主分支使用 **Universal Bridge Core 0.4.3** 共存架构，并已通过完整候选包实机验证。
 
 ## 已验证
 
@@ -38,4 +38,10 @@ Java Classic 和基岩互通版可以同时安装兼容方案，不需要在两�
 - `bridge_files/`：保留 v2.0.1 时代的旧 Bridge 源码，供历史参考；
 - `RELEASE_v2.0.1.md`：历史 v2.0.1 发布说明。
 
-> Release 包会额外包含 `shared/` 目录，其中是 Universal Bridge Core 0.4.3 的共享安装脚本、源码和预编译 `W81KERN.dll`。
+面向普通用户的统一项目 Release 会把本方案作为单独附件提供，例如：
+
+```text
+Win81_BedrockInterop_v2.1.0-RC1_Core0.4.3.zip
+```
+
+GitHub Tag 不再使用客户端专属前缀，而与其它系统/客户端一起归入项目级 `vX.Y.Z[-rcN]` Release。
