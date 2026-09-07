@@ -2,16 +2,17 @@
 
 此目录保存 Windows 8.1 下多个中国版基岩客户端共用的 IFEO Bridge。
 
-当前核心版本：**0.4.3**。
+当前核心版本：**0.4.3**，并已完成完整候选包实机验证。
 
-其中 **0.4.2** 已完成 Java Classic + 基岩互通版同机共存实测；0.4.3 在同一兼容核心上将基岩互通版模式名从较抽象的 `interop` 改为 `bedrock-interop`，并保留旧值作为兼容别名。
+0.4.3 在 0.4.2 已验证兼容核心的基础上，将基岩互通版模式名从较抽象的 `interop` 改为 `bedrock-interop`，并保留旧值作为兼容别名。随后已使用包含 Core 0.4.3 的 Java Classic 与基岩互通版完整候选包再次实测：两种客户端均可安装、启动、进入世界，并可同时注册共存。
 
-2026-09-06 已在同一台 Windows 8.1 x64 机器上验证：
+## 已验证
 
 - Java 经典版启动器中的基岩版可正常启动并进入世界；
 - 基岩互通版可正常从发烧游戏启动器启动并进入世界；
 - 两种客户端可以同时注册，共用一个 `Minecraft.Windows.exe` IFEO Debugger；
-- Bridge 按 `Minecraft.Windows.exe` 的**完整路径**分流，不再依赖“同一时间只能安装一个 Bridge”。
+- Bridge 按 `Minecraft.Windows.exe` 的**完整路径**分流，不再依赖“同一时间只能安装一个 Bridge”；
+- 从旧 `interop` 命名升级到 `bedrock-interop` 后，完整候选包仍可正常工作。
 
 ## 工作方式
 
