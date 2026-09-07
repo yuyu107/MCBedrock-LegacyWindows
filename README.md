@@ -37,7 +37,7 @@ shared/
 
 ## Windows 8.1 多客户端共存
 
-**Universal Bridge Core 0.4.2 已完成同机实测；Core 0.4.3 仅调整模式命名并保留旧模式兼容别名。**
+**Universal Bridge Core 0.4.3 已完成完整候选包实机验证。** Java Classic 与基岩互通版可以同时安装、同时注册，并分别正常启动和进入世界。
 
 ```text
 Minecraft.Windows.exe
@@ -53,17 +53,26 @@ Minecraft.Windows.exe
 
 因此不再需要为了切换 Java Classic / 基岩互通版反复卸载 IFEO。卸载其中一个方案只注销它自己的完整路径；只要仍有其它客户端注册，共享 IFEO 就会保留。
 
-## Release / Tag 区分
+## 统一 Release
 
-源码统一维护在 `main`，Release 用 Tag 前缀区分适用客户端。完整规则见 [docs/RELEASE_TAGS.md](docs/RELEASE_TAGS.md)。
+从下一阶段开始，GitHub Release 按**整个项目**统一发布，不再为不同客户端分别创建 Release。Tag 采用：
 
 ```text
-bedrock-interop-win81-vX.Y.Z[-rcN]
-java-classic-win81-vX.Y.Z[-rcN]
-developer-win81-vX.Y.Z
+vX.Y.Z
+vX.Y.Z-rcN
 ```
 
-已经存在的历史 Tag `v2.0.1` 保持原样；后续 Release 使用带客户端前缀的 Tag。多个客户端 Release 可以携带同一个 Universal Bridge Core。
+同一个 Release 可以同时包含 Windows 7、Windows 8.1 以及未来其它系统的多个客户端附件。客户端和系统通过附件名区分，例如：
+
+```text
+Win81_BedrockInterop_v2.1.0-RC1_Core0.4.3.zip
+Win81_JavaClassic_v1.0.0-RC2_Core0.4.3.zip
+Win81_Developer_v1.0.0.zip
+```
+
+本项目从单客户端 Release 结构迁移到多客户端、多系统统一 Release，下一阶段计划从 **`v3.0.0-rc1`** 开始。完整规则见 [docs/RELEASE_TAGS.md](docs/RELEASE_TAGS.md)。
+
+历史 Tag `v2.0.1` 保持原样，不重命名、不删除。
 
 ## Windows 7 发烧游戏下载兼容
 
@@ -74,6 +83,6 @@ developer-win81-vX.Y.Z
 - [免责声明](DISCLAIMER.md)
 - [安全说明](SECURITY.md)
 - [更新日志](CHANGELOG.md)
-- [Release Tag 规则](docs/RELEASE_TAGS.md)
+- [Release / Tag 规则](docs/RELEASE_TAGS.md)
 
 本仓库自行编写的内容按 [MIT License](LICENSE) 发布；第三方软件、组件、商标及资源仍归各自权利人所有。
