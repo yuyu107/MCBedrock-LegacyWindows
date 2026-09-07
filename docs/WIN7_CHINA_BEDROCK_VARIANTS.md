@@ -5,7 +5,7 @@
 这些客户端虽然最终运行的都是基岩版，但分发方式、启动链和随包组件并不完全相同，因此应当分别测试，不应把某一种客户端的修复方法无条件套用到另外一种。
 
 > [!IMPORTANT]
-> 以下结论来自实际机器测试，并不表示所有未来版本都一定保持相同兼容性。游戏、启动器或 VxKex 更新后，都可能改变结果。
+> 以下结论来自实际机器测试，并不表示所有未来版本都一定保持相同兼容性。游戏、启动器、发烧游戏平台或 VxKex 更新后，都可能改变结果。
 
 ## 所有方案的共同前置条件
 
@@ -24,7 +24,7 @@ XINPUT1_3.dll
 | 客户端 | Windows 7 状态 | 当前已验证方案 |
 |---|---|---|
 | Java 经典版启动器中的基岩版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
-| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；按本仓库 Windows 7 方案配置 |
+| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；如需解决发烧游戏平台下载链兼容，可使用 FeverGames-LegacyWindows-Downloader v1.3.1 |
 | 开发者版本 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + VxKex，并将游戏目录自带的 `dbghelp.dll` 改名/禁用 |
 
 三种客户端目前都已经实机验证到**能够正常启动并进入世界**，并非只验证到出现窗口或进入主菜单。
@@ -59,7 +59,30 @@ Windows 7 下目前仍建议：
 
 实机已经验证该方案可以正常完成启动并进入世界。
 
-FeverGames 平台本身的 Windows 7 下载兼容问题由独立仓库 **FeverGames-LegacyWindows-Downloader** 维护。
+### 发烧游戏平台下载链
+
+基岩互通版的**游戏运行兼容**与发烧游戏平台自身的**下载链兼容**是两个不同问题。
+
+Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [FeverGames-LegacyWindows-Downloader](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader) 提供的兼容方案。
+
+当前正式版为 **v1.3.1**，已验证：
+
+- Windows 7 SP1 x64；
+- FeverGames `1.18.42.12`；
+- FeverGames `1.18.42.14`；
+- `1.18.42.14 / layout B` 的 5 个前端补丁点精确匹配；
+- FeverGames 安装在自定义目录 `D:\FeverGames`；
+- 7-Zip 安装在自定义目录 `D:\7-Zip`；
+- Win7 兼容 `downloadIPC.exe` 替换成功；
+- 《我的世界》基岩互通版完整下载成功；
+- 游戏启动成功并进入世界。
+
+v1.3.1 已确认同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
+
+- [下载 FeverGames-LegacyWindows-Downloader v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1)
+
+> [!NOTE]
+> FeverGames-LegacyWindows-Downloader 解决的是**发烧游戏下载流程**。游戏本体下载完成后，仍需要按本页的 VxKex / `XINPUT1_3.dll` 方案解决 `Minecraft.Windows.exe` 在 Windows 7 上的运行兼容。
 
 ## 3. 开发者版本
 
@@ -149,6 +172,7 @@ VxKex / VxKex NEXT
 - `XINPUT1_3.dll` 是否存在且可正常加载；
 - 第一个出现的 Windows 错误；
 - 是否存在游戏目录自带的 `dbghelp.dll` / `dbgcore.dll`；
-- 是否能够创建窗口、进入主菜单和进入世界。
+- 是否能够创建窗口、进入主菜单和进入世界；
+- 如果问题发生在发烧游戏下载阶段，同时记录 FeverGames 版本、Patch profile 和独立下载器版本。
 
 请不要公开账号、Token、Cookie、手机号、邮箱等隐私信息。

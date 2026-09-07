@@ -1,5 +1,14 @@
 # 更新日志
 
+## 2026-09-07 — 同步 FeverGames Legacy Windows Downloader v1.3.1
+
+- 顶层 README 的 Windows 7 发烧游戏下载兼容说明更新到独立下载器 **v1.3.1**；
+- 补充 FeverGames `1.18.42.14 / layout B` 的实机验证状态；
+- 记录同一 `1.18.42.14` 版本号下可能存在不同 `FeverGamesInstaller.exe` 二进制布局，下载器通过 5 个目标位置精确匹配而不是仅按版本号套用补丁；
+- 补充 FeverGames 与 7-Zip 自定义安装目录支持，以及 Windows 7 / PowerShell 2.0 路径保存和 UAC 一键安装流程修复；
+- `docs/WIN7_CHINA_BEDROCK_VARIANTS.md` 明确区分“发烧游戏下载链兼容”和“Minecraft.Windows.exe 游戏运行兼容”；
+- `docs/releases/v3.0.0-rc1.md` 同步当前独立下载器版本与验证范围，但 v1.3.1 仍由 FeverGames-LegacyWindows-Downloader 独立仓库发布，不重复打包进 MCBedrock-LegacyWindows Release。
+
 ## 2026-09-07 — 统一项目 Release 规划与 Core 0.4.3 完整验证
 
 - GitHub Release 从按客户端分别发布，调整为整个项目统一发布；

@@ -32,7 +32,7 @@ shared/
 | 基岩互通版 | Windows 8.1 x64 | ✅ | Universal Bridge `bedrock-interop` 模式；可正常登录、进入游戏和世界 |
 | Java 经典版启动器中的基岩版 | Windows 8.1 x64 | ✅ | Universal Bridge `java-classic` 模式；可启动并进入世界；单人和非局域网联机正常；局域网联机目前不可用 |
 | Java 经典版启动器中的基岩版 | Windows 7 SP1 x64 | ✅ | VxKex / VxKex NEXT + `XINPUT1_3.dll` |
-| 基岩互通版 | Windows 7 SP1 x64 | ✅ | VxKex / VxKex NEXT + `XINPUT1_3.dll` |
+| 基岩互通版 | Windows 7 SP1 x64 | ✅ | VxKex / VxKex NEXT + `XINPUT1_3.dll`；发烧游戏下载链可使用独立的 v1.3.1 下载兼容包 |
 | 开发者版本 | Windows 7 SP1 x64 | ✅ | VxKex + `XINPUT1_3.dll` + 禁用游戏目录自带 `dbghelp.dll` |
 
 ## Windows 8.1 多客户端共存
@@ -77,6 +77,17 @@ Win81_Developer_v1.0.0.zip
 ## Windows 7 发烧游戏下载兼容
 
 发烧游戏平台在 Windows 7 上的下载链兼容已拆分到独立仓库：[FeverGames-LegacyWindows-Downloader](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader)。
+
+当前正式版为 **v1.3.1**。该版本继续使用已经完成端到端验证的 .NET 替代下载核心，并新增：
+
+- FeverGames `1.18.42.14 / layout B` 精确补丁配置；
+- 同一 `1.18.42.14` 版本号下多种 `FeverGamesInstaller.exe` 二进制布局的精确识别；
+- FeverGames 与 7-Zip 自定义安装目录支持；
+- Windows 7 / PowerShell 2.0 路径保存与一键安装 UAC 流程修复。
+
+当前已在 Windows 7 SP1 x64 上验证 `1.18.42.14 / layout B` 完成《我的世界》基岩互通版完整下载、启动并进入世界。下载器项目与本仓库中的**游戏客户端运行兼容**是两个独立层次：前者解决发烧游戏平台下载链，后者解决 `Minecraft.Windows.exe` 在旧系统上的运行。
+
+- [前往 FeverGames-LegacyWindows-Downloader v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1)
 
 ## 通用文档
 
