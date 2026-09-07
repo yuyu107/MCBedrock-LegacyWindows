@@ -1,12 +1,21 @@
 # 更新日志
 
+## 2026-09-07 — 统一项目 Release 规划与 Core 0.4.3 完整验证
+
+- GitHub Release 从按客户端分别发布，调整为整个项目统一发布；
+- 后续 Tag 统一使用 `vX.Y.Z` / `vX.Y.Z-rcN`；
+- Windows 版本与客户端类型改由 Release 附件名和 Release 说明区分；
+- 同一个 Release 可以同时包含 Windows 7、Windows 8.1 以及未来其它系统的基岩互通版、Java Classic、开发者版本等附件；
+- 历史 Tag `v2.0.1` 保持不变；
+- 计划从 `v3.0.0-rc1` 开始采用新的项目级 Release 结构；
+- Universal Bridge Core 0.4.3 已通过完整候选包实机验证：基岩互通版与 Java Classic 均可安装、启动并进入世界，且可以同时注册共存。
+
 ## 2026-09-06 — Universal Bridge Core 0.4.3 模式命名整理
 
 - 将基岩互通版的正式内部模式名从 `interop` 调整为更明确的 `bedrock-interop`；
 - 新安装统一写入 `Mode = bedrock-interop`；
 - 旧共存测试留下的 `Mode = interop` 仍可被 Core 0.4.3 识别，并按 `bedrock-interop` 处理；
 - `check_bridge.ps1` 会把旧值明确标为兼容别名；
-- 基岩互通版后续 Tag 前缀从尚未启用的 `interop-win81-*` 调整为 `bedrock-interop-win81-*`；
 - 历史正式 Tag `v2.0.1` 保持不变。
 
 ## 2026-09-06 — Universal Bridge Core 0.4.2 同机共存验证
@@ -26,12 +35,11 @@
 - 新增 `clients/`，按“客户端 → 系统”分类；
 - 将现有基岩互通版 Windows 8.1 Bridge 移入 `clients/bedrock-interoperability/win81/`；
 - 新增 Java 经典版启动器中的基岩版 Windows 8.1 RC1 目录；
-- Release Tag 后续使用客户端前缀区分，历史 `v2.0.1` 保持不变；
 - Java 经典版 Win8.1 已实机验证 `Minecraft.Windows.exe 1.21.120.0` 可从启动器正常启动并进入世界；单人和非局域网联机正常；本地/局域网联机暂列为已知限制。
 
 ## v2.0.1 — 基岩互通版 Windows 8.1
 
-当前基岩互通版 Windows 8.1 正式兼容版本。
+当前基岩互通版 Windows 8.1 历史正式兼容版本。
 
 ### 修复
 
