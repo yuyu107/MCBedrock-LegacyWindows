@@ -1,6 +1,6 @@
 # Java 经典版启动器中的基岩版 — Windows 8.1
 
-历史 RC：**v1.0.0-RC1**。当前主分支使用 **Universal Bridge Core 0.4.3** 共存架构；其兼容核心基于已完成同机实测的 0.4.2。
+历史 RC：**v1.0.0-RC1**。当前主分支使用 **Universal Bridge Core 0.4.3** 共存架构，并已通过完整候选包实机验证。
 
 本方案用于让 Java 经典版启动器中的基岩版继续在 **Windows 8.1 x64** 上运行。
 
@@ -48,4 +48,10 @@ Mode = java-classic
 - `uninstall_bridge.cmd`：只注销当前 Java Classic 路径；
 - `bridge_files/Win81JavaClassicBridge.cs`：保留 RC1 旧独立 Bridge 源码，供历史参考。
 
-> Release 包会额外包含 `shared/` 目录，其中是 Universal Bridge Core 0.4.3 的共享安装脚本、源码和预编译 `W81KERN.dll`。
+面向普通用户的统一项目 Release 会把本方案作为单独附件提供，例如：
+
+```text
+Win81_JavaClassic_v1.0.0-RC2_Core0.4.3.zip
+```
+
+GitHub Tag 不再使用客户端专属前缀，而与其它系统/客户端一起归入项目级 `vX.Y.Z[-rcN]` Release。
