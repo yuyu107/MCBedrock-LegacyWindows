@@ -33,7 +33,12 @@
 ### Windows 7
 
 - **三种中国版基岩客户端运行兼容：** [Windows 7 实测与安装说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md)
+- **VxKex：** [GitHub 仓库](https://github.com/i486/VxKex) · [Releases / 下载](https://github.com/i486/VxKex/releases)
+- **VxKex NEXT：** [GitHub 仓库](https://github.com/YuZhouRen86/VxKex-NEXT) · [Releases / 下载](https://github.com/YuZhouRen86/VxKex-NEXT/releases)
 - **发烧游戏下载兼容：** [FeverGames Legacy Windows Downloader v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1)
+
+> [!WARNING]
+> VxKex / VxKex NEXT 建议直接从上面的 GitHub **Releases** 获取，并选择正常的 **Release** 构建。不要从不明网盘、DLL 下载站或第三方“绿色版 / 整合版”获取，以免版本过旧或文件被修改。
 
 当前 FeverGames 下载器 v1.3.1 已在 Windows 7 SP1 x64 上验证 `1.18.42.14 / layout B`，可以完成《我的世界》基岩互通版完整下载，并继续启动、进入世界。
 
