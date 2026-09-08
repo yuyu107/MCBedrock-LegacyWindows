@@ -18,6 +18,8 @@
 - FeverGames Downloader：解决**发烧游戏平台下载游戏**；
 - VxKex / VxKex NEXT：解决**下载后的 Minecraft.Windows.exe 在 Win7 上运行**。
 
+当前 FeverGames Downloader 建议使用 **v1.3.3**。v1.3.3 已包含 PowerShell 2.0 / 旧 CLR 托管 EXE 验证修复，以及 Release CMD 编码 / 换行修复。v1.3.2 Release 已删除，不再作为下载入口。
+
 详见 [[发烧游戏下载兼容|FeverGames-Downloader]] 和 [[Windows 7 总指南|Windows-7]]。
 
 ## VxKex 和 VxKex NEXT 都要装吗？
