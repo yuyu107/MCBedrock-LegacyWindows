@@ -6,6 +6,10 @@
 > 本项目为社区兼容项目，与 Microsoft、Mojang、网易、发烧游戏（FeverGames）无官方关联。
 > 游戏、启动器或发烧游戏平台更新后，都可能引入新的兼容问题。
 
+> [!TIP]
+> **当前预发布版本： [v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)**  
+> 面向 Windows 8.1 x64，包含基岩互通版与 Java 经典版启动器中的基岩版两个 Universal Bridge Core 0.4.3 附件。稳定正式版仍为 [v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1)。
+
 ## 不知道该用哪个？从这里开始
 
 先确认你的 **Windows 版本** 和 **使用的客户端**：
@@ -16,8 +20,8 @@
 | **Windows 7 SP1 x64** | 基岩互通版：游戏本体无法运行 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 7 SP1 x64** | 基岩互通版：发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader **v1.3.1** | [下载 v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1) |
 | **Windows 7 SP1 x64** | 开发者版本 | VxKex + `XINPUT1_3.dll` + 禁用游戏目录自带 `dbghelp.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
-| **Windows 8.1 x64** | 基岩互通版 | Launcher Login / Universal Bridge | [使用说明](clients/bedrock-interoperability/win81/) · [正式版 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1) |
-| **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) |
+| **Windows 8.1 x64** | 基岩互通版 | Launcher Login / Universal Bridge | [使用说明](clients/bedrock-interoperability/win81/) · [Pre-release v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1) · [稳定版 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1) |
+| **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) · [Pre-release v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1) |
 | **Windows 8.0** | 各客户端 | ⚠️ 尚未完整适配 | 暂无正式方案 |
 | **Windows 10 / 11** | 新版客户端 | 通常不需要本项目 | 优先使用官方环境 |
 
@@ -44,13 +48,16 @@
 
 ### Windows 8.1
 
-- **基岩互通版：** [方案说明](clients/bedrock-interoperability/win81/) · [当前正式 Release v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1)
+- **当前 Pre-release：** [v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)
+  - 基岩互通版附件：`Win81_BedrockInterop_v2.1.0-RC1_Core0.4.3.zip`
+  - Java 经典版启动器中的基岩版附件：`Win81_JavaClassic_v1.0.0-RC2_Core0.4.3.zip`
+- **基岩互通版：** [方案说明](clients/bedrock-interoperability/win81/) · [稳定正式版 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1)
 - **Java 经典版启动器中的基岩版：** [方案说明](clients/java-classic-bedrock/win81/)
 - **Universal Bridge Core：** [共享底层说明](shared/win81-universal-bridge/)
 
 > [!NOTE]
-> GitHub 当前最新**正式** Release 仍为 **v2.0.1**，它是 Windows 8.1 基岩互通版的历史正式版本。
-> 仓库 `main` 已继续开发 Universal Bridge 多客户端共存方案；新的项目级统一 Release 尚未替代 v2.0.1 正式版。
+> **v3.0.0-rc1 已作为 GitHub Pre-release 发布**，用于测试新的项目级统一 Release 与 Universal Bridge Core 0.4.3 多客户端共存方案。  
+> **v2.0.1** 仍是当前稳定正式 Release，并且只对应 Windows 8.1 基岩互通版的旧独立 Launcher Login Bridge。
 
 ## 当前实测状态
 
@@ -76,7 +83,7 @@ Universal IFEO Bridge
         └─ java-classic
 ```
 
-如果你只是普通用户，不需要手动配置 Core；请直接进入上面的对应客户端说明。
+如果你只是普通用户，不需要手动配置 Core；请直接进入上面的对应客户端说明。需要测试当前统一候选包时，可直接前往 [v3.0.0-rc1 Pre-release](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)。
 
 ## 问题反馈
 
@@ -93,11 +100,12 @@ Universal IFEO Bridge
 
 ## 其它文档
 
+- [v3.0.0-rc1 Pre-release](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)
+- [v3.0.0-RC1 详细说明](docs/releases/v3.0.0-rc1.md)
 - [更新日志](CHANGELOG.md)
 - [免责声明](DISCLAIMER.md)
 - [安全说明](SECURITY.md)
 - [Release / Tag 规则](docs/RELEASE_TAGS.md)
-- [v3.0.0-RC1 计划说明](docs/releases/v3.0.0-rc1.md)
 
 <details>
 <summary><strong>开发者：仓库目录结构</strong></summary>
@@ -123,14 +131,14 @@ docs/
 <details>
 <summary><strong>开发者：Release 结构说明</strong></summary>
 
-项目正在从早期“按客户端分别发布”迁移到“整个项目统一 Release”。未来 Tag 统一使用：
+项目已开始采用整个项目统一 Release 的结构，Tag 使用：
 
 ```text
 vX.Y.Z
 vX.Y.Z-rcN
 ```
 
-同一个 Release 可以包含多个系统、多个客户端附件。历史 Tag `v2.0.1` 保持原样，不重命名、不删除。
+同一个 Release 可以包含多个系统、多个客户端附件。`v3.0.0-rc1` 是这一结构下首个已发布的 Pre-release；历史 Tag `v2.0.1` 保持原样，不重命名、不删除。
 
 详细规则见 [docs/RELEASE_TAGS.md](docs/RELEASE_TAGS.md)。
 
