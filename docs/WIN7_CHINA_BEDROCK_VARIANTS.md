@@ -7,6 +7,16 @@
 > [!IMPORTANT]
 > 以下结论来自实际机器测试，并不表示所有未来版本都一定保持相同兼容性。游戏、启动器、发烧游戏平台或 VxKex 更新后，都可能改变结果。
 
+## VxKex / VxKex NEXT 下载
+
+建议直接从 GitHub 原仓库的 **Releases** 获取，不要优先使用来源不明的第三方打包版。
+
+- **VxKex：** [GitHub 仓库](https://github.com/i486/VxKex) · [Releases / 下载](https://github.com/i486/VxKex/releases)
+- **VxKex NEXT：** [GitHub 仓库](https://github.com/YuZhouRen86/VxKex-NEXT) · [Releases / 下载](https://github.com/YuZhouRen86/VxKex-NEXT/releases)
+
+> [!NOTE]
+> 本页同时记录 VxKex 和 VxKex NEXT，是因为不同测试阶段、不同客户端曾使用过不同分支。不要仅因为名称相近就把两者当成完全相同的软件；实际使用时请以本页对应客户端的已验证方案为准。
+
 ## 所有方案的共同前置条件
 
 无论使用以下哪一种中国版基岩客户端，Windows 7 下都需要确保系统中存在并能够正常使用：
