@@ -8,7 +8,30 @@
 
 [[发烧游戏下载兼容|FeverGames-Downloader]]
 
+当前建议使用 FeverGames Legacy Windows Downloader **v1.3.3**。v1.3.3 已继承旧 CLR managed EXE 验证修复，并修复 Release `.cmd` 入口在 Win7 上的编码 / 换行问题。
+
 先运行下载器的状态检查。不要把网络慢、CDN 波动和前端补丁未生效混为一谈。
+
+### 下载器安装阶段常见错误
+
+如果看到：
+
+```text
+Compiled downloader did not validate as a managed .NET executable.
+```
+
+这通常是旧版下载器在 Windows 7 / PowerShell 2.0 / 旧 CLR 环境下的验证误判。请直接换用 v1.3.3。
+
+如果看到：
+
+```text
+锘緻echo off
+powershell.exe -> hell.exe
+echo -> ho
+goto -> to
+```
+
+这是旧 Release ZIP 的 `.cmd` 入口文件被 Win7 `cmd.exe` 错误解析。请删除旧解压目录，重新下载并解压 v1.3.3，不要继续运行旧 v1.3.2 目录中的文件。
 
 ## 2. 点击开始游戏后没有窗口 / 立即闪退
 
