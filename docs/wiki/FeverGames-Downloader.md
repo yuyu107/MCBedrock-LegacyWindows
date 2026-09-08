@@ -26,6 +26,28 @@
 
 如果游戏已经完整下载，但点击开始游戏后 `Minecraft.Windows.exe` 闪退、报缺少入口或无法进入世界，则应看 [[Windows 7 总指南|Windows-7]]。
 
+## 系统环境要求
+
+FeverGames-LegacyWindows-Downloader 的安装器需要 Windows 7 中仍保留基础脚本和 .NET 组件：
+
+- `cmd.exe`：运行 `.cmd` 入口；
+- `powershell.exe`：执行安装、状态检查、恢复和诊断脚本；
+- .NET Framework 2.0 / 3.5 / 4.x 中至少一个可用的 C# 编译器 `csc.exe`；
+- 管理员权限；
+- 7-Zip 或 Windows 7 可用的 `zstd.exe`；
+- 基本注册表、文件系统和进程查询能力。
+
+如果使用深度精简版 Windows 7，缺少 PowerShell、.NET Framework / `csc.exe`、UAC、注册表或基础进程查询组件，可能无法运行安装、状态检查、恢复或诊断脚本。
+
+常见表现：
+
+```text
+'powershell.exe' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+No compatible .NET C# compiler was found (2.0/3.5/4.x).
+```
+
+这类情况属于系统环境不完整，不是发烧游戏补丁逻辑失败，也不是 Minecraft 本体运行兼容失败。
+
 ## v1.3.3 当前验证范围
 
 已验证：
@@ -92,6 +114,9 @@ core\
 ## 反馈时提供
 
 - Windows 版本；
+- 是否为精简版 / Ghost 版 / 魔改版；
+- `powershell.exe` 是否存在；
+- 是否能找到 .NET C# 编译器 `csc.exe`；
 - FeverGames 版本；
 - Patch profile；
 - Frontend patch count；
