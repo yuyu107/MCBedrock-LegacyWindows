@@ -89,7 +89,7 @@ Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [Fever
 - 《我的世界》基岩互通版完整下载成功；
 - 游戏启动成功并进入世界。
 
-v1.3.1 已确认同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
+v1.3.3 继续沿用同版本多布局的精确匹配逻辑：同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
 
 - [下载 FeverGames-LegacyWindows-Downloader v1.3.3](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3)
 

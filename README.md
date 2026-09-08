@@ -44,7 +44,7 @@
 > [!WARNING]
 > VxKex / VxKex NEXT 建议直接从上面的 GitHub **Releases** 获取，并选择正常的 **Release** 构建。不要从不明网盘、DLL 下载站或第三方“绿色版 / 整合版”获取，以免版本过旧或文件被修改。
 
-当前 FeverGames 下载器 v1.3.1 已在 Windows 7 SP1 x64 上验证 `1.18.42.14 / layout B`，可以完成《我的世界》基岩互通版完整下载，并继续启动、进入世界。
+当前 FeverGames 下载器 v1.3.3 已在 Windows 7 SP1 x64 上验证 `1.18.42.14 / layout B`，可以完成《我的世界》基岩互通版完整下载，并继续启动、进入世界。v1.3.3 同时包含 PowerShell 2.0 / 旧 CLR 验证修复与 Release CMD 编码 / 换行修复。
 
 ### Windows 8.1
 
