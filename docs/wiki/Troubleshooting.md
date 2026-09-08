@@ -17,6 +17,22 @@
 如果看到：
 
 ```text
+'powershell.exe' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+```
+
+说明系统中没有可用的 PowerShell，或 PowerShell 路径已被精简 / 破坏。当前下载器安装器无法继续运行。
+
+如果看到：
+
+```text
+No compatible .NET C# compiler was found (2.0/3.5/4.x).
+```
+
+说明系统中没有找到可用的 .NET C# 编译器 `csc.exe`。请先恢复 / 安装 .NET Framework 组件，或换用更完整的 Windows 7 SP1 x64 环境。
+
+如果看到：
+
+```text
 Compiled downloader did not validate as a managed .NET executable.
 ```
 
@@ -117,6 +133,7 @@ dbghelp.dll.bak
 
 请尽量一次提供：
 - Windows 版本；
+- 是否为精简版 / Ghost 版 / 魔改版；
 - 客户端类型；
 - Minecraft 版本 / 构建；
 - VxKex / VxKex NEXT 及版本（如使用）；
