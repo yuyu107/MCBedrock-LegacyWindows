@@ -34,7 +34,7 @@ XINPUT1_3.dll
 | 客户端 | Windows 7 状态 | 当前已验证方案 |
 |---|---|---|
 | Java 经典版启动器中的基岩版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
-| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；如需解决发烧游戏平台下载链兼容，可使用 FeverGames-LegacyWindows-Downloader v1.3.1 |
+| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；如需解决发烧游戏平台下载链兼容，可使用 FeverGames-LegacyWindows-Downloader v1.3.3 |
 | 开发者版本 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + VxKex，并将游戏目录自带的 `dbghelp.dll` 改名/禁用 |
 
 三种客户端目前都已经实机验证到**能够正常启动并进入世界**，并非只验证到出现窗口或进入主菜单。
@@ -75,7 +75,9 @@ Windows 7 下目前仍建议：
 
 Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [FeverGames-LegacyWindows-Downloader](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader) 提供的兼容方案。
 
-当前正式版为 **v1.3.1**，已验证：
+当前正式版为 **v1.3.3**。v1.3.3 继承 v1.3.1 的 layout A/B 与自定义路径支持，并合入 v1.3.2 的 PowerShell 2.0 / 旧 CLR 验证修复，以及 v1.3.3 的 CMD 编码 / 换行修复。
+
+当前已验证：
 
 - Windows 7 SP1 x64；
 - FeverGames `1.18.42.12`；
@@ -89,7 +91,7 @@ Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [Fever
 
 v1.3.1 已确认同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
 
-- [下载 FeverGames-LegacyWindows-Downloader v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1)
+- [下载 FeverGames-LegacyWindows-Downloader v1.3.3](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3)
 
 > [!NOTE]
 > FeverGames-LegacyWindows-Downloader 解决的是**发烧游戏下载流程**。游戏本体下载完成后，仍需要按本页的 VxKex / `XINPUT1_3.dll` 方案解决 `Minecraft.Windows.exe` 在 Windows 7 上的运行兼容。

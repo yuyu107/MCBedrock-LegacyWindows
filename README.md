@@ -18,7 +18,7 @@
 |---|---|---|---|
 | **Windows 7 SP1 x64** | Java 经典版启动器中的基岩版 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 7 SP1 x64** | 基岩互通版：游戏本体无法运行 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
-| **Windows 7 SP1 x64** | 基岩互通版：发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader **v1.3.1** | [下载 v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1) |
+| **Windows 7 SP1 x64** | 基岩互通版：发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader **v1.3.3** | [下载 v1.3.3](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3) |
 | **Windows 7 SP1 x64** | 开发者版本 | VxKex + `XINPUT1_3.dll` + 禁用游戏目录自带 `dbghelp.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 8.1 x64** | 基岩互通版 | Launcher Login / Universal Bridge | [使用说明](clients/bedrock-interoperability/win81/) · [Pre-release v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1) · [稳定版 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1) |
 | **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) · [Pre-release v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1) |
@@ -39,7 +39,7 @@
 - **三种中国版基岩客户端运行兼容：** [Windows 7 实测与安装说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md)
 - **VxKex：** [GitHub 仓库](https://github.com/i486/VxKex) · [Releases / 下载](https://github.com/i486/VxKex/releases)
 - **VxKex NEXT：** [GitHub 仓库](https://github.com/YuZhouRen86/VxKex-NEXT) · [Releases / 下载](https://github.com/YuZhouRen86/VxKex-NEXT/releases)
-- **发烧游戏下载兼容：** [FeverGames Legacy Windows Downloader v1.3.1](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.1)
+- **发烧游戏下载兼容：** [FeverGames Legacy Windows Downloader v1.3.3](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3)
 
 > [!WARNING]
 > VxKex / VxKex NEXT 建议直接从上面的 GitHub **Releases** 获取，并选择正常的 **Release** 构建。不要从不明网盘、DLL 下载站或第三方“绿色版 / 整合版”获取，以免版本过旧或文件被修改。
