@@ -24,7 +24,7 @@
 - Java 经典版启动器中的基岩版：可通过 VxKex / VxKex NEXT + `XINPUT1_3.dll` 运行并进入世界。
 - 基岩互通版：可通过 VxKex / VxKex NEXT + `XINPUT1_3.dll` 运行并进入世界。
 - 开发者版本：除 VxKex 与 `XINPUT1_3.dll` 外，还需要禁用游戏目录自带的 `dbghelp.dll`，已验证可进入世界。
-- 发烧游戏平台下载链：由独立项目 FeverGames-LegacyWindows-Downloader 维护。
+- 发烧游戏平台下载链：由独立项目 FeverGames-LegacyWindows-Downloader 维护，当前建议使用 v1.3.3。
 
 ### Windows 8.1 x64
 
