@@ -1,5 +1,22 @@
 # 更新日志
 
+## v3.0.0 — Windows 8.1 Universal Bridge 正式版
+
+- 项目正式采用统一 Release 结构；
+- Windows 8.1 x64 正式附件更新为：
+  - `Win81_BedrockInterop_v2.1.1_Core0.4.3.zip`
+  - `Win81_JavaClassic_v1.0.1_Core0.4.3.zip`
+- Universal Bridge Core 保持 **0.4.3**，兼容核心逻辑不变；
+- 正式包根目录改用中文入口，技术文件统一收进 `_core`，减少普通用户看到的英文脚本和源码；
+- 基岩互通版与 Java Classic 均已验证可正常安装、启动并进入世界，并可同时注册共存；
+- 增加 360 安全软件兼容说明与 IFEO `Debugger` 写入失败的明确诊断；
+- 已实测 360 自我保护开启时可能阻止 IFEO `Debugger` 写入；关闭自我保护并在“修改映像劫持”提示中选择允许后可完成安装；
+- **安装完成后可重新开启 360 自我保护，已实测不影响后续正常运行**；
+- 启动游戏时如果 360 仍提示 `Win81UniversalBridge.exe` / Minecraft 存在“可疑操作”，确认路径正确后选择允许即可继续；
+- 保留从基岩互通版 `v2.0.1`、Java Classic 旧 RC 与 Universal Bridge 0.4.x 测试版直接升级的迁移路径；
+- 正式 Release 文案新增 `docs/releases/v3.0.0.md`；
+- 历史 `v3.0.0-rc1` 与 `v2.0.1` 保持原样，不重命名、不删除。
+
 ## 2026-09-07 — 同步 FeverGames Legacy Windows Downloader v1.3.1
 
 - 顶层 README 的 Windows 7 发烧游戏下载兼容说明更新到独立下载器 **v1.3.1**；
