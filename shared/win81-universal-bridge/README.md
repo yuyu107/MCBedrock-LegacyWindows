@@ -52,6 +52,24 @@ interop
 
 Core 0.4.3 运行时仍会识别旧 `interop`，并按 `bedrock-interop` 处理；重新运行新安装器后，该路径会写成新的正式模式名。
 
+## 360 安全软件兼容
+
+Universal Bridge 依赖 Windows 的 IFEO `Debugger` 机制，因此安装时需要写入：
+
+```text
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Minecraft.Windows.exe\Debugger
+```
+
+360 会把该行为识别为“修改映像劫持”。已实测：
+
+- 自我保护开启时，PowerShell 和 `reg.exe` 写入 `Debugger` 都可能被拒绝；
+- 仅退出 360 主界面无效；
+- 关闭 360 的**自我保护**后，可以继续安装；
+- 360 提示“有程序正在修改映像劫持”时，确认路径来自本项目后选择允许即可；
+- Minecraft 启动时，360 还可能提示 `Win81UniversalBridge.exe` 正在进行可疑操作；确认路径正确后选择允许，游戏可继续启动。
+
+因此通常不需要卸载 360。安装器现在会在 IFEO `Debugger` 写入被拒绝时给出针对这一情况的明确提示。
+
 ## 文件
 
 - `Win81UniversalBridge.cs`：Universal Bridge Core 0.4.3 源码；
