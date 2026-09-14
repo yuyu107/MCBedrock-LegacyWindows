@@ -2,7 +2,7 @@
 
 本目录保存中国版《我的世界》**基岩互通版**在 Windows 8.1 x64 上的兼容方案。
 
-当前正式包：**v2.1.1**，使用 **Universal Bridge Core 0.4.3**。历史正式版本 `v2.0.1` 为旧独立 Launcher Login Bridge。
+当前正式包：**v2.1.1**，使用 **Universal Bridge Core 0.4.3**，随项目级 [v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0) 正式发布。历史正式版本 `v2.0.1` 为旧独立 Launcher Login Bridge。
 
 ## 已验证
 
@@ -35,9 +35,7 @@ Universal Bridge 根据目标完整路径选择基岩互通版逻辑，并处理
 
 正式 Release 附件：
 
-```text
-Win81_BedrockInterop_v2.1.1_Core0.4.3.zip
-```
+[Win81_BedrockInterop_v2.1.1_Core0.4.3.zip](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/download/v3.0.0/Win81_BedrockInterop_v2.1.1_Core0.4.3.zip)
 
 1. 将压缩包完整解压到 `Minecraft.Windows.exe` 所在目录；
 2. 运行 `安装兼容方案.cmd`；
