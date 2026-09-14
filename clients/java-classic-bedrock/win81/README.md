@@ -1,8 +1,8 @@
 # Java 经典版启动器中的基岩版 — Windows 8.1
 
-历史 RC：**v1.0.0-RC1**。当前主分支使用 **Universal Bridge Core 0.4.3** 共存架构，并已通过完整候选包实机验证。
-
 本方案用于让 Java 经典版启动器中的基岩版继续在 **Windows 8.1 x64** 上运行。
+
+当前正式包：**v1.0.1**，使用 **Universal Bridge Core 0.4.3**。历史 RC `v1.0.0-RC1` 保留作为早期独立 Bridge 参考。
 
 ## 已实机验证
 
@@ -32,26 +32,50 @@ Mode = java-classic
 
 ## 安装
 
+正式 Release 附件：
+
+```text
+Win81_JavaClassic_v1.0.1_Core0.4.3.zip
+```
+
 1. 确保 `Minecraft.Windows.exe` 为原版文件；
 2. 移除早期测试时手动加入的 `api-ms-win-*` 测试 DLL；
-3. 将 Release 压缩包完整解压到 `Minecraft.Windows.exe` 所在目录；
-4. 运行 `install_bridge.cmd`；
+3. 将压缩包完整解压到 `Minecraft.Windows.exe` 所在目录；
+4. 运行 `安装兼容方案.cmd`；
 5. 之后继续从 Java 经典版启动器正常启动。
 
-如果同一台机器也安装了基岩互通版，可以直接在互通版目录再运行它自己的 `install_bridge.cmd`，无需先卸载 Java Classic。
+正式包根目录使用中文入口；技术文件统一放在 `_core`，普通用户不需要单独运行或移动其中的文件。
+
+## 360 安全软件兼容
+
+本项目安装 Universal Bridge 时需要写入 Windows 的 IFEO `Debugger`。360 会把该行为识别为“修改映像劫持”。
+
+已实测：
+
+- 360 自我保护开启时，安装器可能在写入 `Debugger` 时提示“拒绝访问 / 尝试执行未经授权的操作”；
+- 仅退出 360 主界面不能解除阻止；
+- 暂时关闭 360 的**自我保护**后，可以继续安装；
+- 360 提示“有程序正在修改映像劫持”时，确认操作来自本项目后选择**允许**，即可完成安装；
+- **安装完成后可以重新开启 360 自我保护，已实测不影响后续正常运行**；
+- 启动游戏时如果 360 再提示 `Win81UniversalBridge.exe` / Minecraft 正在进行“可疑操作”，确认路径正确后选择**允许**即可继续。
+
+因此正常情况下不需要卸载 360。正式包安装器在 IFEO `Debugger` 写入被拒绝时也会给出针对 360 自我保护的明确提示。
+
+## 从旧版或 v2.0.1 互通版迁移
+
+- Java Classic 旧独立 RC 可以直接安装 v1.0.1 正式包迁移到共享 Universal Bridge；
+- 如果原来使用的是基岩互通版 v2.0.1，现在只想改用 Java Classic，可以直接在 Java Classic 目录安装本正式包；
+- 如果希望基岩互通版和 Java Classic 两边都继续使用，还需要在原基岩互通版目录安装它对应的 v2.1.1 正式包并运行一次 `安装兼容方案.cmd`。
+
+如果同一台机器也安装了基岩互通版，无需在两者之间手工卸载/切换 IFEO。
 
 ## 工具
 
-- `install_bridge.cmd`：安装共享核心并注册当前路径为 `java-classic`；
-- `check_bridge.cmd`：查看共享核心、当前路径及其它已注册客户端；
-- `collect_diagnostics.cmd`：生成 Java Classic 诊断信息；
-- `uninstall_bridge.cmd`：只注销当前 Java Classic 路径；
-- `bridge_files/Win81JavaClassicBridge.cs`：保留 RC1 旧独立 Bridge 源码，供历史参考。
+正式包中普通用户主要使用：
 
-面向普通用户的统一项目 Release 会把本方案作为单独附件提供，例如：
+- `安装兼容方案.cmd`：安装共享核心并注册当前路径为 `java-classic`；
+- `检查兼容状态.cmd`：查看共享核心、当前路径及其它已注册客户端；
+- `卸载兼容方案.cmd`：只注销当前 Java Classic 路径；
+- `高级工具/生成诊断包.cmd`：遇到异常时生成诊断信息。
 
-```text
-Win81_JavaClassic_v1.0.0-RC2_Core0.4.3.zip
-```
-
-GitHub Tag 不再使用客户端专属前缀，而与其它系统/客户端一起归入项目级 `vX.Y.Z[-rcN]` Release。
+源码仓库中的 `bridge_files/Win81JavaClassicBridge.cs` 保留早期独立 Bridge 源码，主要用于历史参考。
