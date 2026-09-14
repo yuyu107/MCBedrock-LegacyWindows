@@ -2,17 +2,18 @@
 
 此目录保存 Windows 8.1 下多个中国版基岩客户端共用的 IFEO Bridge。
 
-当前核心版本：**0.4.3**，并已完成完整候选包实机验证。
+当前核心版本：**0.4.3**，并已完成完整包实机验证。
 
-0.4.3 在 0.4.2 已验证兼容核心的基础上，将基岩互通版模式名从较抽象的 `interop` 改为 `bedrock-interop`，并保留旧值作为兼容别名。随后已使用包含 Core 0.4.3 的 Java Classic 与基岩互通版完整候选包再次实测：两种客户端均可安装、启动、进入世界，并可同时注册共存。
+0.4.3 在 0.4.2 已验证兼容核心的基础上，将基岩互通版模式名从较抽象的 `interop` 改为 `bedrock-interop`，并保留旧值作为兼容别名。包含 Core 0.4.3 的 Java Classic 与基岩互通版完整包均已实测：两种客户端都可安装、启动、进入世界，并可同时注册共存。
 
 ## 已验证
 
 - Java 经典版启动器中的基岩版可正常启动并进入世界；
 - 基岩互通版可正常从发烧游戏启动器启动并进入世界；
 - 两种客户端可以同时注册，共用一个 `Minecraft.Windows.exe` IFEO Debugger；
-- Bridge 按 `Minecraft.Windows.exe` 的**完整路径**分流，不再依赖“同一时间只能安装一个 Bridge”；
-- 从旧 `interop` 命名升级到 `bedrock-interop` 后，完整候选包仍可正常工作。
+- Bridge 按 `Minecraft.Windows.exe` 的**完整路径**分流；
+- 从旧 `interop` 命名升级到 `bedrock-interop` 后仍可正常工作；
+- 正式包中文入口 / `_core` 目录结构已实测可正常启动。
 
 ## 工作方式
 
@@ -64,11 +65,12 @@ HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\M
 
 - 自我保护开启时，PowerShell 和 `reg.exe` 写入 `Debugger` 都可能被拒绝；
 - 仅退出 360 主界面无效；
-- 关闭 360 的**自我保护**后，可以继续安装；
+- 暂时关闭 360 的**自我保护**后，可以继续安装；
 - 360 提示“有程序正在修改映像劫持”时，确认路径来自本项目后选择允许即可；
-- Minecraft 启动时，360 还可能提示 `Win81UniversalBridge.exe` 正在进行可疑操作；确认路径正确后选择允许，游戏可继续启动。
+- **安装完成后可以重新开启 360 自我保护，已实测不影响后续正常运行**；
+- Minecraft 启动时，360 仍可能提示 `Win81UniversalBridge.exe` 正在进行可疑操作；确认路径正确后选择允许，游戏可继续启动。
 
-因此通常不需要卸载 360。安装器现在会在 IFEO `Debugger` 写入被拒绝时给出针对这一情况的明确提示。
+因此通常不需要卸载 360。安装器会在 IFEO `Debugger` 写入被拒绝时给出针对这一情况的明确提示。
 
 ## 文件
 
