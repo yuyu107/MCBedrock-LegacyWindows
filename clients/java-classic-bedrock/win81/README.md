@@ -2,7 +2,7 @@
 
 本方案用于让 Java 经典版启动器中的基岩版继续在 **Windows 8.1 x64** 上运行。
 
-当前正式包：**v1.0.1**，使用 **Universal Bridge Core 0.4.3**。历史 RC `v1.0.0-RC1` 保留作为早期独立 Bridge 参考。
+当前正式包：**v1.0.1**，使用 **Universal Bridge Core 0.4.3**，随项目级 [v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0) 正式发布。历史 RC `v1.0.0-RC1` 保留作为早期独立 Bridge 参考。
 
 ## 已实机验证
 
@@ -34,9 +34,7 @@ Mode = java-classic
 
 正式 Release 附件：
 
-```text
-Win81_JavaClassic_v1.0.1_Core0.4.3.zip
-```
+[Win81_JavaClassic_v1.0.1_Core0.4.3.zip](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/download/v3.0.0/Win81_JavaClassic_v1.0.1_Core0.4.3.zip)
 
 1. 确保 `Minecraft.Windows.exe` 为原版文件；
 2. 移除早期测试时手动加入的 `api-ms-win-*` 测试 DLL；
