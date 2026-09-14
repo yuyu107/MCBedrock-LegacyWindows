@@ -7,8 +7,8 @@
 > 游戏、启动器或发烧游戏平台更新后，都可能引入新的兼容问题。
 
 > [!TIP]
-> **当前正式版本：`v3.0.0`**  
-> Windows 8.1 x64 正式附件：`Win81_BedrockInterop_v2.1.1_Core0.4.3.zip` 与 `Win81_JavaClassic_v1.0.1_Core0.4.3.zip`。两个客户端共用 Universal Bridge Core 0.4.3。
+> **当前正式版本：[v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0)**  
+> 已于 **2026-09-14** 正式发布。Windows 8.1 x64 正式附件为 `Win81_BedrockInterop_v2.1.1_Core0.4.3.zip` 与 `Win81_JavaClassic_v1.0.1_Core0.4.3.zip`，两个客户端共用 Universal Bridge Core 0.4.3。
 
 ## 不知道该用哪个？从这里开始
 
@@ -20,8 +20,8 @@
 | **Windows 7 SP1 x64** | 基岩互通版：游戏本体无法运行 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 7 SP1 x64** | 基岩互通版：发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader | [独立项目](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader) |
 | **Windows 7 SP1 x64** | 开发者版本 | VxKex + `XINPUT1_3.dll` + 禁用游戏目录自带 `dbghelp.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
-| **Windows 8.1 x64** | 基岩互通版 | Universal Bridge `bedrock-interop` 模式 | [使用说明](clients/bedrock-interoperability/win81/) |
-| **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) |
+| **Windows 8.1 x64** | 基岩互通版 | Universal Bridge `bedrock-interop` 模式 | [使用说明](clients/bedrock-interoperability/win81/) · [下载 v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0) |
+| **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) · [下载 v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0) |
 | **Windows 8.0** | 各客户端 | ⚠️ 尚未完整适配 | 暂无正式方案 |
 | **Windows 10 / 11** | 新版客户端 | 通常不需要本项目 | 优先使用官方环境 |
 
@@ -34,18 +34,14 @@
 
 ## Windows 8.1 正式版
 
-项目正式版：**`v3.0.0`**。
+项目正式版：[**v3.0.0 — MCBedrock-LegacyWindows**](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0)。
 
 附件：
 
-```text
-Win81_BedrockInterop_v2.1.1_Core0.4.3.zip
-Win81_JavaClassic_v1.0.1_Core0.4.3.zip
-```
+- [Win81_BedrockInterop_v2.1.1_Core0.4.3.zip](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/download/v3.0.0/Win81_BedrockInterop_v2.1.1_Core0.4.3.zip)
+- [Win81_JavaClassic_v1.0.1_Core0.4.3.zip](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/download/v3.0.0/Win81_JavaClassic_v1.0.1_Core0.4.3.zip)
 
-Release 详细说明见 [docs/releases/v3.0.0.md](docs/releases/v3.0.0.md)。
-
-正式包已经把普通用户入口整理为中文名称，技术文件收进 `_core`，不再把大量英文脚本直接放在根目录。
+仓库内的详细说明见 [docs/releases/v3.0.0.md](docs/releases/v3.0.0.md)。正式包已经把普通用户入口整理为中文名称，技术文件收进 `_core`，不再把大量英文脚本直接放在根目录。
 
 ## 当前实测状态
 
@@ -102,7 +98,7 @@ C:\ProgramData\MCBedrock-LegacyWindows\Win81UniversalBridge\Win81UniversalBridge
 - 如果希望基岩互通版和 Java Classic 两边都继续使用，需要在两个游戏目录分别运行一次各自正式包的 `安装兼容方案.cmd`；
 - 升级后如需卸载，请使用**当前正式包**里的 `卸载兼容方案.cmd`，不要再运行旧版卸载脚本。
 
-完整升级说明见 [v3.0.0 Release 文案](docs/releases/v3.0.0.md)。
+完整升级说明见 [v3.0.0 正式版说明](docs/releases/v3.0.0.md)。
 
 ## 问题反馈
 
@@ -119,6 +115,7 @@ C:\ProgramData\MCBedrock-LegacyWindows\Win81UniversalBridge\Win81UniversalBridge
 
 ## 其它文档
 
+- [GitHub Release v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0)
 - [v3.0.0 正式版说明](docs/releases/v3.0.0.md)
 - [v3.0.0-RC1 历史候选版说明](docs/releases/v3.0.0-rc1.md)
 - [更新日志](CHANGELOG.md)
@@ -157,7 +154,7 @@ vX.Y.Z
 vX.Y.Z-rcN
 ```
 
-同一个 Release 可以包含多个系统、多个客户端附件。`v3.0.0` 是这一结构下首个正式版；历史 `v3.0.0-rc1` 和 `v2.0.1` 保持原样，不重命名、不删除。
+同一个 Release 可以包含多个系统、多个客户端附件。`v3.0.0` 已于 2026-09-14 正式发布，是这一结构下首个正式版；历史 `v3.0.0-rc1` 和 `v2.0.1` 保持原样，不重命名、不删除。
 
 详细规则见 [docs/RELEASE_TAGS.md](docs/RELEASE_TAGS.md)。
 
