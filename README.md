@@ -7,8 +7,8 @@
 > 游戏、启动器或发烧游戏平台更新后，都可能引入新的兼容问题。
 
 > [!TIP]
-> **当前预发布版本： [v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)**  
-> 面向 Windows 8.1 x64，包含基岩互通版与 Java 经典版启动器中的基岩版两个 Universal Bridge Core 0.4.3 附件。稳定正式版仍为 [v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1)。
+> **当前正式版本：`v3.0.0`**  
+> Windows 8.1 x64 正式附件：`Win81_BedrockInterop_v2.1.1_Core0.4.3.zip` 与 `Win81_JavaClassic_v1.0.1_Core0.4.3.zip`。两个客户端共用 Universal Bridge Core 0.4.3。
 
 ## 不知道该用哪个？从这里开始
 
@@ -18,10 +18,10 @@
 |---|---|---|---|
 | **Windows 7 SP1 x64** | Java 经典版启动器中的基岩版 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 7 SP1 x64** | 基岩互通版：游戏本体无法运行 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
-| **Windows 7 SP1 x64** | 基岩互通版：发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader **v1.3.3** | [下载 v1.3.3](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3) |
+| **Windows 7 SP1 x64** | 基岩互通版：发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader | [独立项目](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader) |
 | **Windows 7 SP1 x64** | 开发者版本 | VxKex + `XINPUT1_3.dll` + 禁用游戏目录自带 `dbghelp.dll` | [Win7 三种客户端完整说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
-| **Windows 8.1 x64** | 基岩互通版 | Launcher Login / Universal Bridge | [使用说明](clients/bedrock-interoperability/win81/) · [Pre-release v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1) · [稳定版 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1) |
-| **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) · [Pre-release v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1) |
+| **Windows 8.1 x64** | 基岩互通版 | Universal Bridge `bedrock-interop` 模式 | [使用说明](clients/bedrock-interoperability/win81/) |
+| **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` 模式 | [使用说明](clients/java-classic-bedrock/win81/) |
 | **Windows 8.0** | 各客户端 | ⚠️ 尚未完整适配 | 暂无正式方案 |
 | **Windows 10 / 11** | 新版客户端 | 通常不需要本项目 | 优先使用官方环境 |
 
@@ -32,38 +32,26 @@
 >
 > 下载问题用 [FeverGames-LegacyWindows-Downloader](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader)，游戏运行问题看 [Win7 三种客户端说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md)。两者不要混为一套补丁。
 
-## 常用下载 / 文档入口
+## Windows 8.1 正式版
 
-### Windows 7
+项目正式版：**`v3.0.0`**。
 
-- **三种中国版基岩客户端运行兼容：** [Windows 7 实测与安装说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md)
-- **VxKex：** [GitHub 仓库](https://github.com/i486/VxKex) · [Releases / 下载](https://github.com/i486/VxKex/releases)
-- **VxKex NEXT：** [GitHub 仓库](https://github.com/YuZhouRen86/VxKex-NEXT) · [Releases / 下载](https://github.com/YuZhouRen86/VxKex-NEXT/releases)
-- **发烧游戏下载兼容：** [FeverGames Legacy Windows Downloader v1.3.3](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3)
+附件：
 
-> [!WARNING]
-> VxKex / VxKex NEXT 建议直接从上面的 GitHub **Releases** 获取，并选择正常的 **Release** 构建。不要从不明网盘、DLL 下载站或第三方“绿色版 / 整合版”获取，以免版本过旧或文件被修改。
+```text
+Win81_BedrockInterop_v2.1.1_Core0.4.3.zip
+Win81_JavaClassic_v1.0.1_Core0.4.3.zip
+```
 
-当前 FeverGames 下载器 v1.3.3 已在 Windows 7 SP1 x64 上验证 `1.18.42.14 / layout B`，可以完成《我的世界》基岩互通版完整下载，并继续启动、进入世界。v1.3.3 同时包含 PowerShell 2.0 / 旧 CLR 验证修复与 Release CMD 编码 / 换行修复。
+Release 详细说明见 [docs/releases/v3.0.0.md](docs/releases/v3.0.0.md)。
 
-### Windows 8.1
-
-- **当前 Pre-release：** [v3.0.0-rc1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)
-  - 基岩互通版附件：`Win81_BedrockInterop_v2.1.0-RC1_Core0.4.3.zip`
-  - Java 经典版启动器中的基岩版附件：`Win81_JavaClassic_v1.0.0-RC2_Core0.4.3.zip`
-- **基岩互通版：** [方案说明](clients/bedrock-interoperability/win81/) · [稳定正式版 v2.0.1](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v2.0.1)
-- **Java 经典版启动器中的基岩版：** [方案说明](clients/java-classic-bedrock/win81/)
-- **Universal Bridge Core：** [共享底层说明](shared/win81-universal-bridge/)
-
-> [!NOTE]
-> **v3.0.0-rc1 已作为 GitHub Pre-release 发布**，用于测试新的项目级统一 Release 与 Universal Bridge Core 0.4.3 多客户端共存方案。  
-> **v2.0.1** 仍是当前稳定正式 Release，并且只对应 Windows 8.1 基岩互通版的旧独立 Launcher Login Bridge。
+正式包已经把普通用户入口整理为中文名称，技术文件收进 `_core`，不再把大量英文脚本直接放在根目录。
 
 ## 当前实测状态
 
 | 客户端 | Windows 7 SP1 x64 | Windows 8.1 x64 |
 |---|---|---|
-| **基岩互通版** | ✅ 可运行并进入世界；发烧游戏下载链也有独立兼容方案 | ✅ 可通过 Bridge 启动、登录并进入世界 |
+| **基岩互通版** | ✅ 可运行并进入世界；发烧游戏下载链也有独立兼容方案 | ✅ 可通过发烧游戏启动、登录并进入世界 |
 | **Java 经典版启动器中的基岩版** | ✅ 可运行并进入世界 | ✅ 可启动并进入世界；单人和非局域网联机正常 |
 | **开发者版本** | ✅ 可运行并进入世界 | ⏳ 当前仓库暂无正式方案 |
 
@@ -71,7 +59,7 @@ Windows 7 三种客户端都需要注意 `XINPUT1_3.dll`；开发者版本还需
 
 ## Windows 8.1 多客户端共存
 
-当前 `main` 中的 **Universal Bridge Core 0.4.3** 已完成实机验证：基岩互通版与 Java Classic 可以在同一台 Windows 8.1 x64 机器上同时注册，并分别正常启动、进入世界。
+当前 **Universal Bridge Core 0.4.3** 已完成实机验证：基岩互通版与 Java Classic 可以在同一台 Windows 8.1 x64 机器上同时注册，并分别正常启动、进入世界。
 
 ```text
 Minecraft.Windows.exe
@@ -83,7 +71,38 @@ Universal IFEO Bridge
         └─ java-classic
 ```
 
-如果你只是普通用户，不需要手动配置 Core；请直接进入上面的对应客户端说明。需要测试当前统一候选包时，可直接前往 [v3.0.0-rc1 Pre-release](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)。
+两个客户端共享：
+
+```text
+C:\ProgramData\MCBedrock-LegacyWindows\Win81UniversalBridge\Win81UniversalBridge.exe
+```
+
+## 360 安全软件兼容
+
+本项目安装 Universal Bridge 时需要写入 Windows 的 IFEO `Debugger`。360 会把这个动作识别为“修改映像劫持”。
+
+已实测：
+
+- 360 自我保护开启时，安装器可能在写入 `Debugger` 时被拒绝；
+- 仅退出 360 主界面不能解除这一拦截；
+- 暂时关闭 360 的**自我保护**后，可以继续安装；
+- 360 提示“有程序正在修改映像劫持”时，确认操作来自本项目后选择**允许**；
+- **安装完成后可以重新开启 360 自我保护，已实测不影响后续正常运行**；
+- 启动游戏时如果 360 再提示 `Win81UniversalBridge.exe` / Minecraft 正在进行“可疑操作”，确认路径正确后选择**允许**即可继续。
+
+因此正常情况下不需要卸载 360。安装器也会在 IFEO 写入被拒绝时给出针对 360 自我保护的明确提示。
+
+## 从旧版升级
+
+以前使用过本项目 Windows 8.1 Bridge 的用户通常不需要先卸载旧版。关闭 Minecraft 后，完整解压对应正式包并运行新的 `安装兼容方案.cmd` 即可。
+
+- 基岩互通版历史 `v2.0.1` 可以直接升级到 `v2.1.1`；
+- 旧 Java Classic RC 可以直接迁移到 `v1.0.1`；
+- Universal Bridge 0.4.x 测试版可以直接升级；
+- 如果希望基岩互通版和 Java Classic 两边都继续使用，需要在两个游戏目录分别运行一次各自正式包的 `安装兼容方案.cmd`；
+- 升级后如需卸载，请使用**当前正式包**里的 `卸载兼容方案.cmd`，不要再运行旧版卸载脚本。
+
+完整升级说明见 [v3.0.0 Release 文案](docs/releases/v3.0.0.md)。
 
 ## 问题反馈
 
@@ -100,8 +119,8 @@ Universal IFEO Bridge
 
 ## 其它文档
 
-- [v3.0.0-rc1 Pre-release](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0-rc1)
-- [v3.0.0-RC1 详细说明](docs/releases/v3.0.0-rc1.md)
+- [v3.0.0 正式版说明](docs/releases/v3.0.0.md)
+- [v3.0.0-RC1 历史候选版说明](docs/releases/v3.0.0-rc1.md)
 - [更新日志](CHANGELOG.md)
 - [免责声明](DISCLAIMER.md)
 - [安全说明](SECURITY.md)
@@ -131,14 +150,14 @@ docs/
 <details>
 <summary><strong>开发者：Release 结构说明</strong></summary>
 
-项目已开始采用整个项目统一 Release 的结构，Tag 使用：
+项目采用整个项目统一 Release 的结构，Tag 使用：
 
 ```text
 vX.Y.Z
 vX.Y.Z-rcN
 ```
 
-同一个 Release 可以包含多个系统、多个客户端附件。`v3.0.0-rc1` 是这一结构下首个已发布的 Pre-release；历史 Tag `v2.0.1` 保持原样，不重命名、不删除。
+同一个 Release 可以包含多个系统、多个客户端附件。`v3.0.0` 是这一结构下首个正式版；历史 `v3.0.0-rc1` 和 `v2.0.1` 保持原样，不重命名、不删除。
 
 详细规则见 [docs/RELEASE_TAGS.md](docs/RELEASE_TAGS.md)。
 
