@@ -2,7 +2,7 @@
 
 此目录保存 Windows 8.1 下多个中国版基岩客户端共用的 IFEO Bridge。
 
-当前核心版本：**0.4.3**，并已完成完整包实机验证。
+当前核心版本：**0.4.3**，已随项目级 [v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0) 正式发布，并已完成完整包实机验证。
 
 0.4.3 在 0.4.2 已验证兼容核心的基础上，将基岩互通版模式名从较抽象的 `interop` 改为 `bedrock-interop`，并保留旧值作为兼容别名。包含 Core 0.4.3 的 Java Classic 与基岩互通版完整包均已实测：两种客户端都可安装、启动、进入世界，并可同时注册共存。
 
@@ -13,7 +13,7 @@
 - 两种客户端可以同时注册，共用一个 `Minecraft.Windows.exe` IFEO Debugger；
 - Bridge 按 `Minecraft.Windows.exe` 的**完整路径**分流；
 - 从旧 `interop` 命名升级到 `bedrock-interop` 后仍可正常工作；
-- 正式包中文入口 / `_core` 目录结构已实测可正常启动。
+- `v3.0.0` 正式包中文入口 / `_core` 目录结构已实测可正常启动。
 
 ## 工作方式
 
