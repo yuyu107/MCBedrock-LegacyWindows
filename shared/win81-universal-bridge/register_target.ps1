@@ -31,6 +31,14 @@ function Hash-Path([string]$p) {
     try { $h=$sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($n)) } finally { $sha.Dispose() }
     return (($h|ForEach-Object{$_.ToString('x2')}) -join '')
 }
+function Throw-IfeoAccessDenied([string]$detail) {
+    $msg='Access to the Minecraft.Windows.exe IFEO Debugger value was denied. '
+    $msg+='Known compatibility: 360 security software can block this operation while Self-Protection is enabled. '
+    $msg+='Temporarily disable 360 Self-Protection, run the installer again, and choose Allow if 360 warns that a program is modifying image hijacking. '
+    $msg+='Closing the 360 main window alone may not disable this protection.'
+    if($detail){$msg+=' Details: '+$detail}
+    throw $msg
+}
 
 $GameRoot=[IO.Path]::GetFullPath($GameRoot)
 $PayloadRoot=[IO.Path]::GetFullPath($PayloadRoot)
@@ -120,8 +128,15 @@ if($existing -and $existing -ne $wanted){
     }
     Write-Host ('[MIGRATE] Replacing known MCBedrock-LegacyWindows bridge IFEO: '+$existing)
 }
-if(-not(Test-Path -LiteralPath $ifeo)){New-Item -Path $ifeo -Force|Out-Null}
-New-ItemProperty -LiteralPath $ifeo -Name Debugger -PropertyType String -Value $wanted -Force|Out-Null
+Write-Host '[STAGE] Updating Minecraft.Windows.exe IFEO Debugger...'
+if(-not(Test-Path -LiteralPath $ifeo)){
+    try { New-Item -Path $ifeo -Force|Out-Null }
+    catch [System.UnauthorizedAccessException] { Throw-IfeoAccessDenied $_.Exception.Message }
+    catch [System.Security.SecurityException] { Throw-IfeoAccessDenied $_.Exception.Message }
+}
+try { New-ItemProperty -LiteralPath $ifeo -Name Debugger -PropertyType String -Value $wanted -Force|Out-Null }
+catch [System.UnauthorizedAccessException] { Throw-IfeoAccessDenied $_.Exception.Message }
+catch [System.Security.SecurityException] { Throw-IfeoAccessDenied $_.Exception.Message }
 $verifyDebugger=(Get-ItemProperty -LiteralPath $ifeo -Name Debugger -ErrorAction Stop).Debugger
 if($verifyDebugger -ne $wanted){throw ('IFEO verification failed. Current value: '+$verifyDebugger)}
 Write-Host ('[VERIFY] IFEO Debugger: '+$verifyDebugger)
