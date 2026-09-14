@@ -2,6 +2,17 @@
 
 本仓库同时维护多种中国版《我的世界》基岩客户端与多个 Windows 版本的兼容方案。源码统一保存在 `main`，客户端和系统通过目录及 Release 附件区分；GitHub Release 按整个项目统一发布，不再为每个客户端分别创建 Release / Tag。
 
+## 当前正式版
+
+当前项目级正式 Release：
+
+```text
+v3.0.0
+```
+
+发布时间：**2026-09-14**  
+Release：<https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0>
+
 ## 项目级 Tag
 
 正式版：
@@ -28,7 +39,7 @@ v3.1.0
 
 ## 附件命名
 
-客户端和系统信息放在附件名中，而不是 Tag 中。当前 v3.0.0 正式版例如：
+客户端和系统信息放在附件名中，而不是 Tag 中。当前 v3.0.0 正式版：
 
 ```text
 Win81_BedrockInterop_v2.1.1_Core0.4.3.zip
@@ -88,6 +99,8 @@ Universal Bridge Core：0.4.3
 v2.0.1
 v3.0.0-rc1
 ```
+
+`v3.0.0-rc1` 为 v3.0.0 的历史候选版，正式版发布后不再作为普通用户推荐下载。
 
 此前文档中规划过以下客户端级 Tag：
 
