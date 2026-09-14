@@ -31,6 +31,26 @@ Mode = bedrock-interop
 
 当前尚未专门完成“更换盘符 / 含空格目录 / 中文目录”的独立实机验证，因此 Release 中不会把自定义安装路径列为已验证项目。如果游戏安装后又被移动到新的位置，需要在新的 `Minecraft.Windows.exe` 所在目录重新运行 `install_bridge.cmd` 进行注册。
 
+## 360 安全软件兼容说明
+
+本项目需要写入：
+
+```text
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Minecraft.Windows.exe\Debugger
+```
+
+这是 Universal Bridge 用来在 `Minecraft.Windows.exe` 启动前接管并修正兼容环境的必要机制。360 会把这一行为识别为“修改映像劫持”并进行防护。
+
+已实测：
+
+- 仅退出 360 主界面并不能解除阻止；
+- 打开 360 时，如果“自我保护”保持开启，安装器可能在写入 `Debugger` 时出现“拒绝访问 / 尝试执行未经授权的操作”；
+- **关闭 360 的自我保护后**，重新运行安装器即可继续；
+- 360 弹出“有程序正在修改映像劫持”提示时，确认程序路径来自本项目后选择**允许**，安装可正常完成；
+- 启动游戏时，360 还可能提示正在进行“可疑操作”。确认相关程序是本项目的 `Win81UniversalBridge.exe` / Minecraft 后选择**允许**，游戏即可继续启动。
+
+因此正常情况下**不需要卸载 360**。如果安装器在 Core 自检完成后立即报访问被拒绝，优先检查 360 的自我保护设置。
+
 ## 共存
 
 Java Classic 和基岩互通版可以同时安装兼容方案，不需要在两者之间手工卸载/切换 IFEO。卸载本目录方案时只注销当前基岩互通版路径；如果 Java Classic 仍然注册，共享 IFEO 会继续保留。
