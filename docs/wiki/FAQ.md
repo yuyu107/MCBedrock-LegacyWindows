@@ -4,6 +4,8 @@
 
 用于记录和维护中国版《我的世界》不同基岩客户端在旧版 Windows 上的兼容方案，当前重点包括 Windows 7 SP1 x64 与 Windows 8.1 x64。
 
+当前正式版本为 **[v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0)**。
+
 ## Windows 10 / 11 需要这些补丁吗？
 
 通常不需要。Windows 10 / 11 优先使用官方环境，本项目主要解决旧系统兼容问题。
@@ -15,22 +17,21 @@
 ## Windows 7 为什么既要 FeverGames Downloader，又要 VxKex？
 
 因为它们解决两个不同问题：
+
 - FeverGames Downloader：解决**发烧游戏平台下载游戏**；
 - VxKex / VxKex NEXT：解决**下载后的 Minecraft.Windows.exe 在 Win7 上运行**。
-
-当前 FeverGames Downloader 建议使用 **v1.3.3**。v1.3.3 已包含 PowerShell 2.0 / 旧 CLR 托管 EXE 验证修复，以及 Release CMD 编码 / 换行修复。v1.3.2 Release 已删除，不再作为下载入口。
 
 详见 [[发烧游戏下载兼容|FeverGames-Downloader]] 和 [[Windows 7 总指南|Windows-7]]。
 
 ## VxKex 和 VxKex NEXT 都要装吗？
 
-不是。它们是不同的兼容实现/维护分支，不是要求同时叠加使用。优先按照当前实测方案选择其中一种。
+不是。它们是不同的兼容实现 / 维护分支，不是要求同时叠加使用。优先按照当前实测方案选择其中一种。
 
 详见 [[VxKex / VxKex NEXT|VxKex]]。
 
 ## 为什么还需要 XINPUT1_3.dll？
 
-因为目前三种已验证的 Win7 中国版基岩客户端都仍依赖这部分旧版 DirectX 运行库。VxKex 并不会自动补齐所有第三方/运行库依赖。
+因为目前三种已验证的 Win7 中国版基岩客户端都仍依赖这部分旧版 DirectX 运行库。VxKex 并不会自动补齐所有第三方 / 运行库依赖。
 
 ## 可以直接从 DLL 网站下载 XINPUT1_3.dll 吗？
 
@@ -46,6 +47,23 @@
 
 可以。当前 Universal Bridge Core 0.4.3 已实机验证基岩互通版和 Java Classic 可以同时注册，并分别正常启动和进入世界。
 
+v3.0.0 中的正式附件是：
+
+```text
+Win81_BedrockInterop_v2.1.1_Core0.4.3.zip
+Win81_JavaClassic_v1.0.1_Core0.4.3.zip
+```
+
+## 360 报“修改映像劫持”怎么办？
+
+这是因为 Windows 8.1 Universal Bridge 安装时需要写入 IFEO `Debugger`。
+
+如果 360 自我保护导致安装器提示“拒绝访问 / 尝试执行未经授权的操作”，可以暂时关闭 360 的**自我保护**，重新运行 `安装兼容方案.cmd`，并在“修改映像劫持”提示中确认来自本项目后选择允许。
+
+**安装完成后可以重新开启 360 自我保护，已实测不影响后续正常运行。**
+
+启动游戏时如果 360 再提示 `Win81UniversalBridge.exe` / Minecraft 存在可疑操作，确认路径正确后选择允许即可。
+
 ## 为什么 Java Classic Win8.1 的局域网联机不行？
 
 这是当前已知限制。现阶段已优先保持启动、单人和非局域网联机功能稳定，局域网联机尚未解决。
@@ -58,11 +76,12 @@
 
 ## 为什么首页不放所有技术细节？
 
-首页主要用于快速导航。更完整的安装、原理、升级和错误说明放在 Wiki，避免新用户第一次进入仓库就被大量开发信息淹没。
+首页主要用于快速导航。更完整的安装、原理、升级和错误说明放在 Wiki 与 Release，避免新用户第一次进入仓库就被大量开发信息淹没。
 
 ## 我反馈问题时最少要写什么？
 
 至少说明：
+
 - Windows 版本；
 - 哪一种客户端；
 - Minecraft 版本；
