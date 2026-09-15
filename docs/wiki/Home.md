@@ -2,6 +2,8 @@
 
 这里用于集中整理中国版《我的世界》基岩客户端在旧版 Windows 上的兼容资料。
 
+当前正式版本：**[v3.0.0](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0)**。
+
 如果你只是来解决问题，不需要先了解项目结构，按下面顺序选择即可。
 
 ## 我该看哪一页？
@@ -24,12 +26,13 @@
 - Java 经典版启动器中的基岩版：可通过 VxKex / VxKex NEXT + `XINPUT1_3.dll` 运行并进入世界。
 - 基岩互通版：可通过 VxKex / VxKex NEXT + `XINPUT1_3.dll` 运行并进入世界。
 - 开发者版本：除 VxKex 与 `XINPUT1_3.dll` 外，还需要禁用游戏目录自带的 `dbghelp.dll`，已验证可进入世界。
-- 发烧游戏平台下载链：由独立项目 FeverGames-LegacyWindows-Downloader 维护，当前建议使用 v1.3.3。
+- 发烧游戏平台下载链：由独立项目 FeverGames-LegacyWindows-Downloader 维护。
 
 ### Windows 8.1 x64
 
-- 基岩互通版：Launcher Login / Universal Bridge 方案已验证可登录、启动并进入世界。
-- Java 经典版启动器中的基岩版：Universal Bridge `java-classic` 模式已验证可启动并进入世界；单人与非局域网联机正常，局域网联机目前有已知限制。
+- 基岩互通版：v3.0.0 中的 `Win81_BedrockInterop_v2.1.1_Core0.4.3.zip` 已验证可登录、启动并进入世界。
+- Java 经典版启动器中的基岩版：v3.0.0 中的 `Win81_JavaClassic_v1.0.1_Core0.4.3.zip` 已验证可启动并进入世界；单人与非局域网联机正常，局域网联机目前有已知限制。
+- 两者共用 Universal Bridge Core 0.4.3，可在同一台机器上同时注册。
 
 ## 两类问题不要混淆
 
