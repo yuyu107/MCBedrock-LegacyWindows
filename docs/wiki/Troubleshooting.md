@@ -8,9 +8,7 @@
 
 [[发烧游戏下载兼容|FeverGames-Downloader]]
 
-当前建议使用 FeverGames Legacy Windows Downloader **v1.3.3**。v1.3.3 已继承旧 CLR managed EXE 验证修复，并修复 Release `.cmd` 入口在 Win7 上的编码 / 换行问题。
-
-先运行下载器的状态检查。不要把网络慢、CDN 波动和前端补丁未生效混为一谈。
+当前建议使用 FeverGames Legacy Windows Downloader 的最新正式版。先运行下载器的状态检查，不要把网络慢、CDN 波动和前端补丁未生效混为一谈。
 
 ### 下载器安装阶段常见错误
 
@@ -30,28 +28,10 @@ No compatible .NET C# compiler was found (2.0/3.5/4.x).
 
 说明系统中没有找到可用的 .NET C# 编译器 `csc.exe`。请先恢复 / 安装 .NET Framework 组件，或换用更完整的 Windows 7 SP1 x64 环境。
 
-如果看到：
-
-```text
-Compiled downloader did not validate as a managed .NET executable.
-```
-
-这通常是旧版下载器在 Windows 7 / PowerShell 2.0 / 旧 CLR 环境下的验证误判。请直接换用 v1.3.3。
-
-如果看到：
-
-```text
-锘緻echo off
-powershell.exe -> hell.exe
-echo -> ho
-goto -> to
-```
-
-这是旧 Release ZIP 的 `.cmd` 入口文件被 Win7 `cmd.exe` 错误解析。请删除旧解压目录，重新下载并解压 v1.3.3，不要继续运行旧 v1.3.2 目录中的文件。
-
 ## 2. 点击开始游戏后没有窗口 / 立即闪退
 
 Windows 7：
+
 - 确认系统为 Win7 SP1 x64；
 - 确认 `XINPUT1_3.dll` 可用；
 - 确认 VxKex / VxKex NEXT 是对真正的 `Minecraft.Windows.exe` 开启；
@@ -61,18 +41,34 @@ Windows 7：
 详见 [[Windows 7 总指南|Windows-7]]。
 
 Windows 8.1：
-- 确认对应 Bridge 已安装；
-- 运行 `check_bridge.cmd`；
-- 如果游戏目录移动过，重新在新目录运行 `install_bridge.cmd`；
+
+- 优先使用 [v3.0.0 正式版](https://github.com/yuyu107/MCBedrock-LegacyWindows/releases/tag/v3.0.0)；
+- 确认对应正式包已完整解压到 `Minecraft.Windows.exe` 所在目录；
+- 运行 `检查兼容状态.cmd`；
+- 如果游戏目录移动过，在新目录重新运行 `安装兼容方案.cmd`；
 - 如果曾装过旧 Bridge，查看 [[版本与升级|Release-and-Upgrade]]。
 
-## 3. 报 `XINPUT1_3.dll` 缺失
+## 3. Win8.1 安装器提示“拒绝访问 / 尝试执行未经授权的操作”
+
+如果安装器已经完成 Universal Bridge 编译和版本自检，但随后在写入 IFEO `Debugger` 时失败，并且系统安装了 360：
+
+1. 暂时关闭 360 的**自我保护**；
+2. 重新运行 `安装兼容方案.cmd`；
+3. 360 提示“有程序正在修改映像劫持”时，确认操作来自本项目后选择**允许**。
+
+仅退出 360 主界面可能无效。
+
+**安装完成后可以重新开启 360 自我保护，已实测不影响后续正常运行。**
+
+启动游戏时如果 360 再提示 `Win81UniversalBridge.exe` / Minecraft 正在进行可疑操作，确认路径正确后选择允许即可。
+
+## 4. 报 `XINPUT1_3.dll` 缺失
 
 目前三种已验证 Win7 中国版基岩客户端都需要 `XINPUT1_3.dll`。
 
 建议安装微软旧版 DirectX 运行库补齐，不要从随机 DLL 下载站单独复制文件。
 
-## 4. 报 `dbgcore.MiniDumpWriteDump` / `dbghelp.dll`
+## 5. 报 `dbgcore.MiniDumpWriteDump` / `dbghelp.dll`
 
 如果是开发者版本，并出现类似：
 
@@ -96,9 +92,10 @@ dbghelp.dll.bak
 
 不要替换 `System32` 中的 DLL。
 
-## 5. Win8.1 Bridge 安装过，但后来失效
+## 6. Win8.1 Bridge 安装过，但后来失效
 
 常见原因：
+
 - 游戏目录被移动；
 - Bridge 文件被删除；
 - 其它工具改写了 `Minecraft.Windows.exe` 的 IFEO；
@@ -106,32 +103,42 @@ dbghelp.dll.bak
 - 使用了旧安装包中的卸载脚本处理新方案。
 
 建议：
-1. 关闭所有 Minecraft 实例；
-2. 在当前游戏目录运行最新方案中的 `check_bridge.cmd`；
-3. 如路径已变化，重新运行 `install_bridge.cmd`；
-4. 卸载时使用**当前新包**内的 `uninstall_bridge.cmd`。
 
-## 6. Java Classic Win8.1 能进游戏但局域网联机不行
+1. 关闭所有 Minecraft 实例；
+2. 在当前游戏目录运行正式包中的 `检查兼容状态.cmd`；
+3. 如路径已变化，重新运行 `安装兼容方案.cmd`；
+4. 卸载时使用**当前正式包**内的 `卸载兼容方案.cmd`。
+
+## 7. Java Classic Win8.1 能进游戏但局域网联机不行
 
 这是当前已知限制之一。现阶段已验证：
+
 - 单人正常；
 - 非局域网联机正常；
 - 本地 / 局域网联机目前不可用。
 
 因此如果只有局域网功能异常，而启动和其它联机正常，不应直接判断 Bridge 整体失效。
 
-## 7. 发烧游戏下载很慢、几十 MB 停一下
+## 8. 基岩互通版关闭后进程还在
+
+基岩互通版关闭游戏窗口后，`Minecraft.Windows.exe` 有时会继续进行一段时间的退出收尾和磁盘 I/O。
+
+当前实测等待后会自行正常退出，因此不建议立即强制结束进程。只有在持续数分钟仍不退出、或者情况明显恶化时，再作为异常排查。
+
+## 9. 发烧游戏下载很慢、几十 MB 停一下
 
 如果已经能正常开始下载，但表现为：
+
 - 下载几十 MB 后停几分钟；
 - 之后又继续；
 - 偶尔提示网络连接问题；
 
-还需要考虑网络线路、CDN、加速器和连接稳定性。先确认 FeverGames Downloader 的状态检查为正常，再单独排网络问题。
+还需要考虑网络线路、CDN、加速器和连接稳定性。先确认 FeverGames Downloader 的状态检查正常，再单独排网络问题。
 
 ## 反馈问题的最低信息
 
 请尽量一次提供：
+
 - Windows 版本；
 - 是否为精简版 / Ghost 版 / 魔改版；
 - 客户端类型；
