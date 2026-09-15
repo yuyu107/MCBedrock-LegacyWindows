@@ -7,11 +7,14 @@
 通常通过发烧游戏（FeverGames）平台下载和启动。
 
 特点：
-- Windows 7 下既可能遇到**发烧游戏下载链**问题，也可能遇到**Minecraft.Windows.exe 游戏运行**问题；
-- Windows 8.1 下当前使用 Launcher Login / Universal Bridge 方案；
+
+- Windows 7 下既可能遇到**发烧游戏下载链**问题，也可能遇到 **`Minecraft.Windows.exe` 游戏运行**问题；
+- Windows 8.1 x64 当前正式方案为 **Universal Bridge `bedrock-interop` 模式**；
+- v3.0.0 对应附件为 `Win81_BedrockInterop_v2.1.1_Core0.4.3.zip`；
 - 不应把“下载失败”和“游戏无法启动”当成同一种错误。
 
 对应文档：
+
 - [[Windows 7 总指南|Windows-7]]
 - [[发烧游戏下载兼容|FeverGames-Downloader]]
 - [[Windows 8.1 总指南|Windows-8.1]]
@@ -21,8 +24,12 @@
 该版本由 Java 经典版启动器负责启动，但最终运行的仍是 `Minecraft.Windows.exe`。
 
 当前实测：
+
 - Windows 7 SP1 x64：VxKex / VxKex NEXT + `XINPUT1_3.dll`，可进入世界；
-- Windows 8.1 x64：Universal Bridge `java-classic` 模式，可启动并进入世界；单人与非局域网联机正常，局域网联机目前存在已知限制。
+- Windows 8.1 x64：Universal Bridge `java-classic` 模式，可启动并进入世界；
+- v3.0.0 对应附件为 `Win81_JavaClassic_v1.0.1_Core0.4.3.zip`；
+- 单人与非局域网联机正常；
+- 本地 / 局域网联机目前存在已知限制。
 
 Windows 7 下实际游戏文件常见于类似：
 
@@ -54,15 +61,18 @@ VxKex / VxKex NEXT
 
 当前已验证的处理方式是把游戏目录内的 `dbghelp.dll` 改名为例如 `dbghelp.dll.bak`，而不是替换系统 DLL。
 
+Windows 8.1 开发者版本目前还没有本项目正式方案。
+
 ## 怎么判断自己是哪一种？
 
 可以先看你平时从哪里点“开始游戏”：
 
 - 从发烧游戏平台启动：大概率是**基岩互通版**；
 - 从 Java 经典版启动器内进入基岩版：属于**Java 经典版启动器中的基岩版**；
-- 明确下载的是开发者/开发测试构建：属于**开发者版本**。
+- 明确下载的是开发者 / 开发测试构建：属于**开发者版本**。
 
 如果仍然不确定，反馈问题时可以附上：
+
 - 启动器主界面截图；
 - `Minecraft.Windows.exe` 所在目录路径；
 - 游戏版本号；
