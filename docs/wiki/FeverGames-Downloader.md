@@ -6,14 +6,14 @@
 
 <https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader>
 
-当前正式版：**v1.3.3**
+当前正式版：**v1.3.4**
 
 下载：
 
-<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.3>
+<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.4>
 
 > [!NOTE]
-> v1.3.2 Release 已删除，其 PowerShell 2.0 / 旧 CLR 托管 EXE 验证修复已经合入 v1.3.3。普通用户请直接使用 v1.3.3。
+> v1.3.2 Release 已删除，其 PowerShell 2.0 / 旧 CLR 托管 EXE 验证修复已由后续版本继承。普通用户请直接使用 v1.3.4。
 
 ## 它解决什么？
 
@@ -48,13 +48,14 @@ No compatible .NET C# compiler was found (2.0/3.5/4.x).
 
 这类情况属于系统环境不完整，不是发烧游戏补丁逻辑失败，也不是 Minecraft 本体运行兼容失败。
 
-## v1.3.3 当前验证范围
+## v1.3.4 当前验证范围
 
 已验证：
 - Windows 7 SP1 x64；
 - FeverGames `1.18.42.12`；
 - FeverGames `1.18.42.14 / layout A`；
 - FeverGames `1.18.42.14 / layout B`；
+- FeverGames `1.18.43.22 / layout A`；
 - `1.18.42.14 / layout B` 前端补丁位置 `5/5` 精确匹配；
 - Win7 兼容 `downloadIPC.exe` 替换成功；
 - 自定义 FeverGames 安装目录，例如 `D:\FeverGames`；
@@ -63,11 +64,22 @@ No compatible .NET C# compiler was found (2.0/3.5/4.x).
 - Release `.cmd` 入口的 Win7 编码 / 换行兼容；
 - 一键安装 UAC 流程；
 - 《我的世界》基岩互通版完整下载；
-- 下载完成后继续启动并进入世界。
+- 下载完成后继续启动并进入世界；
+- `1.18.43.22 / layout A` 已完成补丁安装、完整下载和成功进入游戏的 Windows 7 实机验证。
 
-## v1.3.3 主要修复
+## v1.3.4 主要更新
 
-v1.3.3 是当前整合修复版，包含两类修复：
+v1.3.4 新增 FeverGames `1.18.43.22 / layout A` exact-byte profile。新版前端的 Gate A、Gate B、`download_check` OS label / minor 和 `downloadIPC --sysVer` getter 均已重新定位，并继续要求 5 个目标位置全部精确匹配。
+
+该布局原版 `FeverGamesInstaller.exe` SHA-256：
+
+```text
+d86f38ea0ab650b94e467dfc7a3c0f01587fa90d6d079d9f04f5b87ae5579c27
+```
+
+## 保留的 v1.3.3 / v1.3.2 修复
+
+当前版本继续保留两类安装兼容修复：
 
 1. **PowerShell 2.0 / 旧 CLR 验证修复**：不再用当前 PowerShell CLR 去加载刚由 .NET 4 `csc.exe` 生成的 `downloadIPC.exe`，而是直接读取 PE Optional Header 的 CLR / COM Descriptor，避免误判为“不是 managed .NET EXE”。
 2. **CMD 编码 / 换行修复**：Release ZIP 中的入口 `.cmd` 统一为无 BOM + CRLF，并保持纯 ASCII 命令内容，避免 Win7 `cmd.exe` 出现 `锘緻echo`、`hell.exe`、`ho` 等解析错乱。
