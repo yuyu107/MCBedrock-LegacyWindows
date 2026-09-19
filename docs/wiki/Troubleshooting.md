@@ -8,7 +8,7 @@
 
 [[发烧游戏下载兼容|FeverGames-Downloader]]
 
-当前建议使用 FeverGames Legacy Windows Downloader 的最新正式版。先运行下载器的状态检查，不要把网络慢、CDN 波动和前端补丁未生效混为一谈。
+当前建议使用 FeverGames Legacy Windows Downloader 的最新正式版（当前为 v1.3.4）。v1.3.4 已增加 FeverGames `1.18.43.22 / layout A` 支持，并完成 Windows 7 实机完整下载与进入游戏验证。先运行下载器的状态检查，不要把网络慢、CDN 波动和前端补丁未生效混为一谈。
 
 ### 下载器安装阶段常见错误
 
