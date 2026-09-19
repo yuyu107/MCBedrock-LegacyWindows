@@ -23,6 +23,8 @@
 
 详见 [[发烧游戏下载兼容|FeverGames-Downloader]] 和 [[Windows 7 总指南|Windows-7]]。
 
+FeverGames Downloader 当前版本为 **v1.3.4**，已加入 FeverGames `1.18.43.22 / layout A` 支持。
+
 ## VxKex 和 VxKex NEXT 都要装吗？
 
 不是。它们是不同的兼容实现 / 维护分支，不是要求同时叠加使用。优先按照当前实测方案选择其中一种。
