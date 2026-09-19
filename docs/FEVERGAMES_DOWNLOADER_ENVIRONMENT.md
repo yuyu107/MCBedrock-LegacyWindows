@@ -4,6 +4,12 @@
 
 这属于发烧游戏平台下载链兼容问题，不是 `Minecraft.Windows.exe` 游戏本体运行兼容问题。
 
+## 当前下载器版本
+
+当前正式版为 **v1.3.4**，新增 FeverGames `1.18.43.22 / layout A` 支持；该布局已在 Windows 7 实机完成补丁安装、完整下载并成功进入游戏。
+
+<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.4>
+
 ## 基本要求
 
 建议使用接近原版的 **Windows 7 SP1 x64**。
@@ -59,7 +65,7 @@ echo -> ho
 goto -> to
 ```
 
-这是旧 Release 包 `.cmd` 文件编码 / 换行不兼容 Windows 7 `cmd.exe` 的表现。请删除旧解压目录，重新下载 v1.3.3 或更新版本。
+这是旧 Release 包 `.cmd` 文件编码 / 换行不兼容 Windows 7 `cmd.exe` 的表现。请删除旧解压目录，重新下载 v1.3.4 或更新版本。
 
 ## 结论
 
