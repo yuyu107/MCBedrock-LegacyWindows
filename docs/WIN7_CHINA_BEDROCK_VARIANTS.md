@@ -93,7 +93,7 @@ Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [Fever
 
 v1.3.5 继续沿用同版本多布局的精确匹配逻辑：同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
 
-- [下载 FeverGames-LegacyWindows-Downloader v1.3.5](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.4)
+- [下载 FeverGames-LegacyWindows-Downloader v1.3.5](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.5)
 
 > [!NOTE]
 > FeverGames-LegacyWindows-Downloader 解决的是**发烧游戏下载流程**。游戏本体下载完成后，仍需要按本页的 VxKex / `XINPUT1_3.dll` 方案解决 `Minecraft.Windows.exe` 在 Windows 7 上的运行兼容。
