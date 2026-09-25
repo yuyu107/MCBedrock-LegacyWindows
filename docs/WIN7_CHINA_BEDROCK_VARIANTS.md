@@ -34,7 +34,7 @@ XINPUT1_3.dll
 | 客户端 | Windows 7 状态 | 当前已验证方案 |
 |---|---|---|
 | Java 经典版启动器中的基岩版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 为 `Minecraft.Windows.exe` 启用 VxKex / VxKex NEXT |
-| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；如需解决发烧游戏平台下载链兼容，可使用 FeverGames-LegacyWindows-Downloader v1.3.5 |
+| 基岩互通版 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + 较新的 VxKex / VxKex NEXT；如需解决发烧游戏平台下载链兼容，可使用 FeverGames-LegacyWindows-Downloader v1.3.6 |
 | 开发者版本 | ✅ 可运行并进入世界 | `XINPUT1_3.dll` + VxKex，并将游戏目录自带的 `dbghelp.dll` 改名/禁用 |
 
 三种客户端目前都已经实机验证到**能够正常启动并进入世界**，并非只验证到出现窗口或进入主菜单。
@@ -75,7 +75,7 @@ Windows 7 下目前仍建议：
 
 Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [FeverGames-LegacyWindows-Downloader](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader) 提供的兼容方案。
 
-当前正式版为 **v1.3.5**。v1.3.5 改用内置 `libzstd.dll 1.5.6` 进行 Zstandard 解压，普通用户不再需要另外安装 7-Zip；同时继续保留 1.18.42.12-A、1.18.42.14-A/B、1.18.43.22-A 的精确匹配支持，以及此前的 PowerShell 2.0 / 旧 CLR 和 CMD 编码兼容修复。
+当前正式版为 **v1.3.6**。v1.3.5 起已改用内置 `libzstd.dll 1.5.6` 进行 Zstandard 解压，普通用户不再需要另外安装 7-Zip；v1.3.6 新增 1.18.44.2-A 精确匹配支持，并修复 Win7 / CLR 2.0 下 `decoder_info.txt` 的 SHA-256 诊断采集兼容问题。
 
 当前已验证：
 
@@ -83,17 +83,18 @@ Windows 7 下，发烧游戏平台新版下载后端可使用独立仓库 [Fever
 - FeverGames `1.18.42.12`；
 - FeverGames `1.18.42.14`；
 - FeverGames `1.18.43.22 / layout A`；
+- FeverGames `1.18.44.2 / layout A`；
 - `1.18.42.14 / layout B` 的 5 个前端补丁点精确匹配；
 - FeverGames 安装在自定义目录 `D:\FeverGames`；
-- 7-Zip 安装在自定义目录 `D:\7-Zip`；
 - Win7 兼容 `downloadIPC.exe` 替换成功；
 - 《我的世界》基岩互通版完整下载成功；
 - 游戏启动成功并进入世界；
-- `1.18.43.22 / layout A` 已在 Windows 7 实机完成补丁安装、完整下载并成功进入游戏。
+- `1.18.43.22 / layout A` 已在 Windows 7 实机完成补丁安装、完整下载并成功进入游戏；
+- `1.18.44.2 / layout A` 已在 Windows 7 实机完成 5/5 补丁、3133/3133 文件完整下载、游戏启动并成功进入世界。
 
-v1.3.5 继续沿用同版本多布局的精确匹配逻辑：同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
+v1.3.6 继续沿用同版本多布局的精确匹配逻辑：同一个 `1.18.42.14` 文件夹版本号可能对应不同的 `FeverGamesInstaller.exe` 二进制布局，因此不会只根据版本号盲目套用补丁，而是要求 5 个目标位置全部精确匹配。
 
-- [下载 FeverGames-LegacyWindows-Downloader v1.3.5](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.5)
+- [下载 FeverGames-LegacyWindows-Downloader v1.3.6](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.6)
 
 > [!NOTE]
 > FeverGames-LegacyWindows-Downloader 解决的是**发烧游戏下载流程**。游戏本体下载完成后，仍需要按本页的 VxKex / `XINPUT1_3.dll` 方案解决 `Minecraft.Windows.exe` 在 Windows 7 上的运行兼容。
