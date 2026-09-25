@@ -6,14 +6,14 @@
 
 <https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader>
 
-当前正式版：**v1.3.4**
+当前正式版：**v1.3.6**
 
 下载：
 
-<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.4>
+<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.6>
 
 > [!NOTE]
-> v1.3.2 Release 已删除，其 PowerShell 2.0 / 旧 CLR 托管 EXE 验证修复已由后续版本继承。普通用户请直接使用 v1.3.4。
+> v1.3.2 Release 已删除，其 PowerShell 2.0 / 旧 CLR 托管 EXE 验证修复已由后续版本继承。普通用户请直接使用 v1.3.6。
 
 ## 它解决什么？
 
@@ -34,7 +34,7 @@ FeverGames-LegacyWindows-Downloader 的安装器需要 Windows 7 中仍保留基
 - `powershell.exe`：执行安装、状态检查、恢复和诊断脚本；
 - .NET Framework 2.0 / 3.5 / 4.x 中至少一个可用的 C# 编译器 `csc.exe`；
 - 管理员权限；
-- 7-Zip 或 Windows 7 可用的 `zstd.exe`；
+- Release ZIP 内置的 `libzstd.dll 1.5.6`（普通用户无需安装 7-Zip 或另外准备 `zstd.exe`）；
 - 基本注册表、文件系统和进程查询能力。
 
 如果使用深度精简版 Windows 7，缺少 PowerShell、.NET Framework / `csc.exe`、UAC、注册表或基础进程查询组件，可能无法运行安装、状态检查、恢复或诊断脚本。
@@ -48,7 +48,7 @@ No compatible .NET C# compiler was found (2.0/3.5/4.x).
 
 这类情况属于系统环境不完整，不是发烧游戏补丁逻辑失败，也不是 Minecraft 本体运行兼容失败。
 
-## v1.3.4 当前验证范围
+## v1.3.6 当前验证范围
 
 已验证：
 - Windows 7 SP1 x64；
@@ -56,26 +56,36 @@ No compatible .NET C# compiler was found (2.0/3.5/4.x).
 - FeverGames `1.18.42.14 / layout A`；
 - FeverGames `1.18.42.14 / layout B`；
 - FeverGames `1.18.43.22 / layout A`；
+- FeverGames `1.18.44.2 / layout A`；
 - `1.18.42.14 / layout B` 前端补丁位置 `5/5` 精确匹配；
 - Win7 兼容 `downloadIPC.exe` 替换成功；
 - 自定义 FeverGames 安装目录，例如 `D:\FeverGames`；
-- 自定义 7-Zip 安装目录，例如 `D:\7-Zip`；
 - Windows 7 / PowerShell 2.0 / 旧 CLR 环境下的 managed EXE 验证；
 - Release `.cmd` 入口的 Win7 编码 / 换行兼容；
 - 一键安装 UAC 流程；
 - 《我的世界》基岩互通版完整下载；
 - 下载完成后继续启动并进入世界；
-- `1.18.43.22 / layout A` 已完成补丁安装、完整下载和成功进入游戏的 Windows 7 实机验证。
+- `1.18.43.22 / layout A` 已完成补丁安装、完整下载和成功进入游戏的 Windows 7 实机验证；
+- `1.18.44.2 / layout A` 已完成 5/5 补丁、3133/3133 文件完整下载、游戏启动并成功进入世界的 Windows 7 实机验证。
 
-## v1.3.4 主要更新
+## v1.3.6 主要更新
 
-v1.3.4 新增 FeverGames `1.18.43.22 / layout A` exact-byte profile。新版前端的 Gate A、Gate B、`download_check` OS label / minor 和 `downloadIPC --sysVer` getter 均已重新定位，并继续要求 5 个目标位置全部精确匹配。
+v1.3.5 起，正式版将 Zstandard 解压从外部 7-Zip / `zstd.exe` 改为进程内调用 **`libzstd.dll 1.5.6`**，Release ZIP 已直接包含 DLL。
 
-该布局原版 `FeverGamesInstaller.exe` SHA-256：
+v1.3.6 新增 FeverGames `1.18.44.2 / layout A` exact-byte profile，并继续要求 Gate A、Gate B、`download_check` OS label / minor 和 `downloadIPC --sysVer` getter 这 5 个目标位置全部精确匹配。
+
+`1.18.44.2-A` 原版 `FeverGamesInstaller.exe`：
 
 ```text
-d86f38ea0ab650b94e467dfc7a3c0f01587fa90d6d079d9f04f5b87ae5579c27
+SHA-256: 99b71ce13933694f7eaba85a8e9890d4a3f93fe09c73ab4a3c42da33b1b04aaf
+Gate A   : 0xABD2B0
+Gate B   : 0x70F0AD
+NetLabel : 0xA605DC
+NetMinor : 0xA60652
+Getter   : 0xA61CA0
 ```
+
+同时修复 Win7 / CLR 2.0 下 `decoder_info.txt` 中 SHA-256 采集调用 `SHA256Managed.Dispose()` 不可用的问题，改用兼容旧 CLR 的 `Clear()`。
 
 ## 保留的 v1.3.3 / v1.3.2 修复
 
