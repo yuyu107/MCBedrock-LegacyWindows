@@ -15,7 +15,7 @@
 |---|---|---|---|
 | **Windows 7 SP1 x64** | Java 经典版启动器中的基岩版 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [查看说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 7 SP1 x64** | 基岩互通版 | VxKex / VxKex NEXT + `XINPUT1_3.dll` | [查看说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
-| **Windows 7 SP1 x64** | 发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader v1.3.5 | [v1.3.5 Release](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.5) |
+| **Windows 7 SP1 x64** | 发烧游戏无法正常下载 | FeverGames Legacy Windows Downloader v1.3.6 | [v1.3.6 Release](https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.6) |
 | **Windows 7 SP1 x64** | 开发者版本 | VxKex + `XINPUT1_3.dll` + 禁用游戏目录自带 `dbghelp.dll` | [查看说明](docs/WIN7_CHINA_BEDROCK_VARIANTS.md) |
 | **Windows 8.1 x64** | 基岩互通版 | Universal Bridge `bedrock-interop` | [使用说明](clients/bedrock-interoperability/win81/) |
 | **Windows 8.1 x64** | Java 经典版启动器中的基岩版 | Universal Bridge `java-classic` | [使用说明](clients/java-classic-bedrock/win81/) |
