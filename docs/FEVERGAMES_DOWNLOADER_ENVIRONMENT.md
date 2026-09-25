@@ -6,9 +6,9 @@
 
 ## 当前下载器版本
 
-当前正式版为 **v1.3.4**，新增 FeverGames `1.18.43.22 / layout A` 支持；该布局已在 Windows 7 实机完成补丁安装、完整下载并成功进入游戏。
+当前正式版为 **v1.3.6**。v1.3.6 新增 FeverGames `1.18.44.2 / layout A` 支持；该布局已在 Windows 7 SP1 x64 实机完成 5/5 补丁、3133/3133 文件完整下载、游戏启动并成功进入世界。
 
-<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.4>
+<https://github.com/yuyu107/FeverGames-LegacyWindows-Downloader/releases/tag/v1.3.6>
 
 ## 基本要求
 
@@ -20,8 +20,14 @@ FeverGames 下载器安装、状态检查、恢复和诊断脚本需要：
 - `powershell.exe`：执行安装、状态检查、恢复和诊断脚本；
 - .NET Framework 2.0 / 3.5 / 4.x 中至少一个可用的 C# 编译器 `csc.exe`；
 - 管理员权限；
-- 7-Zip 或 Windows 7 可用的 `zstd.exe`；
+- Release ZIP 内置的 `libzstd.dll 1.5.6`（普通用户无需另外安装 7-Zip 或准备 `zstd.exe`）；
 - 基本注册表、文件系统和进程查询能力。
+
+## libzstd / Zstandard
+
+v1.3.5 起正式 Release 改为进程内调用 `libzstd.dll 1.5.6`，v1.3.6 Release ZIP 已直接包含该 DLL。
+
+普通用户不需要安装 7-Zip，也不需要配置 7-Zip 路径或额外准备 `zstd.exe`。如果从源码 checkout 运行，则需要自行把官方 Zstandard v1.5.6 x64 的 `libzstd.dll` 放到 FeverGames-LegacyWindows-Downloader 仓库的 `tools\libzstd.dll`。
 
 ## 精简版 Windows 7
 
@@ -65,7 +71,7 @@ echo -> ho
 goto -> to
 ```
 
-这是旧 Release 包 `.cmd` 文件编码 / 换行不兼容 Windows 7 `cmd.exe` 的表现。请删除旧解压目录，重新下载 v1.3.4 或更新版本。
+这是旧 Release 包 `.cmd` 文件编码 / 换行不兼容 Windows 7 `cmd.exe` 的表现。请删除旧解压目录，重新下载 v1.3.6 或更新版本。
 
 ## 结论
 
